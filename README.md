@@ -28,7 +28,7 @@ hasn't received updates for almost two years at the time of writing.
 
 This layer provides a modified and improved version, adding these text objects:
 
-- ii, ai: Block of text with same or higher indentation-
+- ii, ai: Block of text with same or higher indentation
 - iI, aI: Block of text with same or higher indentation, including the first
   line above with smaller indentation
 - iJ, aJ: Block of text with same or higher indentation, including the first
