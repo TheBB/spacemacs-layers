@@ -7,7 +7,7 @@ To install these layers, clone this repository into your `.emacs.d/private`
 directory. Then add the layers you want to enable to
 `dotspacemacs-configuration-layers` in your dotfile.
 
-For this to work, you at least Spacemacs version 0.103.
+For this to work, you need at least Spacemacs version 0.103.
 
 ## Contents
 
