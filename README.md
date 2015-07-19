@@ -11,6 +11,11 @@ For this to work, you at least Spacemacs version 0.103.
 
 ## Contents
 
+### encoding
+
+For the moment, this layer only provides a binding on `SPC x e a` to find
+non-ASCII characters in a buffer.
+
 ### evil-little-word
 
 Provides the [little word](https://github.com/tarao/evil-plugins) text objects
@@ -34,7 +39,12 @@ This layer provides a modified and improved version, adding these text objects:
 - iJ, aJ: Block of text with same or higher indentation, including the first
   lines above and below with smaller indentation
 
-### encoding
+### no-dots
 
-For the moment, this layer only provides a binding on `SPC x e a` to find
-non-ASCII characters in a buffer.
+By default it's impossible to ignore the dotted directories `.` and `..` in
+`helm-find-files`, even if you use `helm-boring-file-regexp-list`. This layer
+hacks it in, anyway.
+
+Note that this works regardless of the value of `helm-ff-skip-boring-files` and
+`helm-boring-file-regexp-list`. That functionality will continue to work as
+before.
