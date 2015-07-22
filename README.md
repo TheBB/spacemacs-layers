@@ -39,6 +39,21 @@ This layer provides a modified and improved version, adding these text objects:
 - iJ, aJ: Block of text with same or higher indentation, including the first
   lines above and below with smaller indentation
 
+### evil-shift-width
+
+This is a small layer that facilitates letting `evil-shift-width` change
+depending on mode. Configure the value of the variable `evil-shift-width-alist`,
+which is an alist mapping modes to shift-widths. The modes can be either
+symbols, lists of symbols or the symbol `t` (default), and the values can be
+either integers or forms to be evaluated.
+
+Tip: `python-mode` guesses the correct offset to use for each file. Put
+`(python-mode . python-indent-offset)` in `evil-shift-width-alist` to update
+`evil-shift-width` accordingly.
+
+Tip: You can add `evil-shift-width/set-width` to any hook or as an advice to any
+function that might change offset behaviour.
+
 ### modify-theme
 
 Usually, to modify a theme, you have to call `custom-set-face`. Unfortunately,
