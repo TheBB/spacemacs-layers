@@ -25,3 +25,6 @@ which are evaluated upon entering a major mode.")
          (setq-local evil-shift-width shift-width)
        (message "Unable to appropriately set evil-shift-width."))))
  t)
+
+(advice-add 'c-set-style
+            :after 'evil-shift-width/set-width)
