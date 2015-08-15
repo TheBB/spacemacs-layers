@@ -24,21 +24,6 @@ versions of Spacemacs, you can toggle `subword-mode` with `SPC t c`, allowing
 regular word motions and text objects to work the same way. With this layer you
 don't need a toggle.
 
-### evil-indent-textobject
-
-Spacemacs ships with the `evil-indent-textobject` plugin, which provides text
-objects based on text indentation. Unfortunately, this package has some
-[broken behaviour](https://github.com/cofi/evil-indent-textobject/issues/1) and
-hasn't received updates for almost two years at the time of writing.
-
-This layer provides a modified and improved version, adding these text objects:
-
-- ii, ai: Block of text with same or higher indentation
-- iI, aI: Block of text with same or higher indentation, including the first
-  line above with smaller indentation
-- iJ, aJ: Block of text with same or higher indentation, including the first
-  lines above and below with smaller indentation
-
 ### evil-shift-width
 
 This is a small layer that facilitates letting `evil-shift-width` change
