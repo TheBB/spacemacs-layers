@@ -2,6 +2,10 @@
 
 Miscellaneous layers for Spacemacs
 
+Layers prefixed with `bb` are opinionated personal configuration layers. All
+others are *intended* to be generally useful for others (although in reality
+they may of course not be).
+
 ## Installation
 To install these layers, clone this repository into your `.emacs.d/private`
 directory. Then add the layers you want to enable to
