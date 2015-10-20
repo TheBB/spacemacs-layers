@@ -61,8 +61,8 @@ you would do this:
 
 ```lisp
 (setq-default modify-theme-modifications
-              '((monokai . ((font-lock-comment-face ((t (:slant italic))))
-                            (font-lock-string-face ((t (:slant italic))))))))
+              '((monokai (font-lock-comment-face :slant italic)
+                         (font-lock-string-face :slant italic))))
 ```
 
 You can use the symbol `t` to apply modifications to *all* themes.

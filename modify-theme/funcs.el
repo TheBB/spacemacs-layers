@@ -23,8 +23,8 @@
           (push face modify-theme--modified-faces))))
 
     ;; Add new modifications
-    (let ((mods (append (cdr (assq theme modify-theme-modifications))
-                        (cdr (assq t modify-theme-modifications)))))
-      (dolist (spec mods)
-        (custom-set-faces spec)
-        (push (car spec) modify-theme--modified-faces)))))
+    (dolist (spec (append (cdr (assq theme modify-theme-modifications))
+                          (cdr (assq t modify-theme-modifications))))
+      (custom-set-faces `(,(car spec) ((t ,(cdr spec)))))
+      (push (car spec) modify-theme--modified-faces))
+    ))
