@@ -45,51 +45,8 @@ function that might change offset behaviour.
 
 ### modify-theme
 
-Usually, to modify a theme, you have to call `custom-set-face`. Unfortunately,
-modifications introduced in this manner apply to *all* themes, which is bad if
-you like to change themes and modify just the faces you are unhappy with in each
-of them.
-
-To use this layer, write your configurations in the `modify-theme-modifications`
-variable. This should be set before layer load time, so do it in
-`dotspacemacs/init`, or via a `:variables` entry in `dotspacemacs/layers`.
-
-This is an alist mapping themes to a list of modifications, which is in turn an
-alist mapping faces to face specs (see the documentation of `defface` for
-details on the latter). Thus, to make strings and comments italic in monokai,
-you would do this:
-
-```lisp
-(setq-default modify-theme-modifications
-              '((monokai (font-lock-comment-face :slant italic)
-                         (font-lock-string-face :slant italic))))
-```
-
-You can use the symbol `t` to apply modifications to *all* themes.
-
-This works by advising `load-theme`, and applying modifications to the `user`
-theme after a theme is loaded using `custom-set-faces`. This means that any
-other usage of `custom-set-faces` will conflict with this layer.
-
-Three variables are provided for common customizations. You can set these in the
-`:variables` block in `dotspacemacs/layers`. Each can be set to a list of themes
-where the given modification will apply, or the symbol `all`, in which case that
-modification will apply to all themes.
-
-- `modify-theme-headings-inherit-from-default`: Set the `inherit` attribute to
-  `default` on all header faces. This will typically make them all monospaced.
-- `modify-theme-headings-same-size`: Set the `height` attribute to 1 on all
-  header faces. This should make them all the same size.
-- `modify-theme-headings-bold`: Set the `weight` attribute to `bold` on all
-  header faces. This is useful if you used `modify-theme-headings-same-size` and
-  are now having trouble distinguishing headers because they used to be large
-  but not bold.
-
-These automatic modifications can be overridden by others in
-`modify-theme-modifications`.
-
-**Note:** The list of header faces might be incomplete. See
-`modify-theme--header-faces`. If you notice anything missing, please make a PR.
+This layer is deprecated and will be removed soon. Use the `theming` layer which
+is now in Spacemacs 0.105 instead.
 
 ### no-dots
 
