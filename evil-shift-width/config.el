@@ -11,6 +11,7 @@
     (coffee-mode . coffee-tab-width)
     (cperl-mode . cperl-indent-level)
     (css-mode . css-indent-offset)
+    (elixir-mode . elixir-smie-indent-basic)
     ((emacs-lisp-mode lisp-mode) . lisp-indent-offset)
     (enh-ruby-mode . enh-ruby-indent-level)
     (erlang-mode . erlang-indent-level)
