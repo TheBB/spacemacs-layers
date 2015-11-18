@@ -1,6 +1,6 @@
 # spacemacs-layers
 
-Miscellaneous layers for Spacemacs
+My Spacemacs configuration. This includes dotfile (`init.el`) plus layers.
 
 Layers prefixed with `bb` are opinionated personal configuration layers. All
 others are *intended* to be generally useful for others (although in reality
@@ -12,6 +12,8 @@ directory. Then add the layers you want to enable to
 `dotspacemacs-configuration-layers` in your dotfile.
 
 For this to work, you need at least Spacemacs version 0.103.
+
+The fact that my `init.el` is present should not cause a problem.
 
 ## Contents
 
