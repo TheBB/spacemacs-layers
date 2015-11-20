@@ -517,7 +517,7 @@
 
   ;; Evilification
   (with-eval-after-load 'org-agenda
-    (spacemacs|evilify-map org-agenda-mode-map
+    (evilified-state-evilify-map org-agenda-mode-map
       :mode org-agenda-mode
       :bindings
       "j" 'org-agenda-next-line
@@ -549,10 +549,10 @@
     (evil-define-key 'motion magit-mode-map (kbd "M-j") 'magit-section-forward-sibling)
     (evil-define-key 'motion magit-mode-map (kbd "M-k") 'magit-section-backward-sibling))
   (with-eval-after-load 'haskell-interactive-mode
-    (spacemacs|evilify-map haskell-error-mode-map
+    (evilified-state-evilified-map haskell-error-mode-map
       :mode haskell-error-mode))
   (with-eval-after-load 'proced
-    (spacemacs|evilify-map proced-mode-map
+    (evilified-state-evilified-map proced-mode-map
       :mode proced-mode))
 
   ;; Safe local variables
