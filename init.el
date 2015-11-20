@@ -83,6 +83,7 @@
 
 (defun dotspacemacs/init ()
   (setq-default
+   dotspacemacs-elpa-https t
    dotspacemacs-editing-style 'vim
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(recents bookmarks projects)
