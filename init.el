@@ -68,7 +68,6 @@
    `(helm-flycheck
      (helm-fuzzier :location (recipe :fetcher github
                                      :repo "EphramPerdition/helm-fuzzier"))
-     help-fns+
      nameless
      nginx-mode
 
@@ -564,10 +563,6 @@
     :defer t
     :init
     (evil-leader/set-key "eh" 'helm-flycheck))
-  (use-package help-fns+
-    :commands describe-keymap
-    :init
-    (evil-leader/set-key "hdK" 'describe-keymap))
   (use-package helm-fuzzier
     :defer t
     :commands helm-fuzzier-mode
