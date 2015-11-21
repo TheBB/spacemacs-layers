@@ -1,4 +1,4 @@
 (spacemacs/declare-prefix "xe" "text-encoding")
 
-(evil-leader/set-key
+(spacemacs/set-leader-keys
   "xea" 'find-first-non-ascii-char)

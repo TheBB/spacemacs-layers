@@ -343,8 +343,7 @@
   (with-eval-after-load 'helm
     (bb/define-key helm-map
       (kbd "C-S-q") 'ace-jump-helm-line-execute-action))
-  (evil-leader/set-key
-    "ec" 'flycheck-clear
+  (spacemacs/set-leader-keys
     "os" 'just-one-space
     "ot" 'helm-etags-select
     "ov" 'evilmi-select-items
@@ -361,7 +360,7 @@
            (if (cdr (visible-frame-list))
                (call-interactively 'spacemacs/frame-killer)
              (call-interactively 'spacemacs/prompt-kill-emacs))))
-  (evil-leader/set-key-for-mode 'text-mode
+  (spacemacs/set-leader-keys-for-major-mode 'text-mode
     "m." (defun bb/empty-commit ()
            (interactive)
            (insert ".")
@@ -499,7 +498,7 @@
   (with-eval-after-load 'erc
     (erc-track-mode -1))
 
-  (evil-leader/set-key
+  (spacemacs/set-leader-keys
     "aiq" 'erc-quit-server
     "aig" (defun bb/gitter ()
             (interactive)
@@ -562,7 +561,7 @@
   (use-package helm-flycheck
     :defer t
     :init
-    (evil-leader/set-key "eh" 'helm-flycheck))
+    (spacemacs/set-leader-keys "eh" 'helm-flycheck))
   (use-package helm-fuzzier
     :defer t
     :commands helm-fuzzier-mode
@@ -581,7 +580,7 @@
         :status nameless-mode
         :on (nameless-mode)
         :off (nameless-mode -1)
-        :evil-leader-for-mode (emacs-lisp-mode . "mo:"))))
+        :evil-leader-for-mode (emacs-lisp-mode . "o:"))))
   (use-package warnings
     :defer t
     :config
