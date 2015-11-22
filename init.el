@@ -353,10 +353,10 @@
                (call-interactively 'spacemacs/frame-killer)
              (call-interactively 'spacemacs/prompt-kill-emacs))))
   (spacemacs/set-leader-keys-for-major-mode 'text-mode
-    "m." (defun bb/empty-commit ()
-           (interactive)
-           (insert ".")
-           (call-interactively 'with-editor-finish)))
+    "." (defun bb/empty-commit ()
+          (interactive)
+          (insert ".")
+          (call-interactively 'with-editor-finish)))
   (bb/define-key company-active-map
     (kbd "C-w") 'evil-delete-backward-word)
 
