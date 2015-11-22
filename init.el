@@ -347,14 +347,6 @@
     "os" 'just-one-space
     "ot" 'helm-etags-select
     "ov" 'evilmi-select-items
-    "oh" (defun bb/highlight ()
-           (interactive)
-           (hlt-highlight-region)
-           (keyboard-quit))
-    "oH" (defun bb/unhighlight ()
-           (interactive)
-           (hlt-unhighlight-region)
-           (keyboard-quit))
     "qw" (defun bb/maybe-quit ()
            (interactive)
            (if (cdr (visible-frame-list))
