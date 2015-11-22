@@ -540,10 +540,10 @@
     (evil-define-key 'motion magit-mode-map (kbd "M-j") 'magit-section-forward-sibling)
     (evil-define-key 'motion magit-mode-map (kbd "M-k") 'magit-section-backward-sibling))
   (with-eval-after-load 'haskell-interactive-mode
-    (evilified-state-evilified-map haskell-error-mode-map
+    (evilified-state-evilify-map haskell-error-mode-map
       :mode haskell-error-mode))
   (with-eval-after-load 'proced
-    (evilified-state-evilified-map proced-mode-map
+    (evilified-state-evilify-map proced-mode-map
       :mode proced-mode))
 
   ;; Safe local variables
