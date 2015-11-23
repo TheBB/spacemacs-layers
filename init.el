@@ -219,10 +219,14 @@
    org-default-notes-file "~/org/capture.org"
    org-agenda-files '("~/org/" "~/org/projects/" "~/org/misc/")
    org-catch-invisible-edits 'show-and-error
-   org-list-demote-modify-bullet '(("-" . "*")
-                                   ("*" . "+")
-                                   ("+" . "-"))
+   org-list-demote-modify-bullet '(("-" . "*") ("*" . "+") ("+" . "-"))
    org-list-allow-alphabetical t
+   org-todo-keywords
+   '((sequence "TODO(t)" "|" "DONE(D)")
+     (type "SIMPLE(s)" "CONFLICTING(c)" "FEEDBACK(f)" "DUBIOUS(d)" "|" "MERGED(M)" "CLOSED(C)"))
+   org-todo-keyword-faces
+   '(("SIMPLE" . "khaki2")
+     ("FEEDBACK" . "deepskyblue1"))
    org-capture-templates
    '(("t" "Tasks")
      ("tg" "General" entry (file+headline "" "Tasks")
