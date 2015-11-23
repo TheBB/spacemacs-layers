@@ -404,9 +404,6 @@
                         comint-mode-hook)))
     (spacemacs/add-to-hooks (defun bb/no-hl-line-mode ()
                               (setq-local global-hl-line-mode nil))
-                            comint-hooks)
-    (spacemacs/add-to-hooks (defun bb/no-scroll-margin ()
-                              (setq-local scroll-margin 0))
                             comint-hooks))
   (add-hook 'inferior-emacs-lisp-mode-hook 'smartparens-mode)
 
