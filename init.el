@@ -510,35 +510,6 @@
                  :full-name bb/full-name)))
 
   ;; Evilification
-  (with-eval-after-load 'org-agenda
-    (evilified-state-evilify-map org-agenda-mode-map
-      :mode org-agenda-mode
-      :bindings
-      "j" 'org-agenda-next-line
-      "k" 'org-agenda-previous-line
-      (kbd "M-j") 'org-agenda-next-item
-      (kbd "M-k") 'org-agenda-previous-item
-      (kbd "M-h") 'org-agenda-earlier
-      (kbd "M-l") 'org-agenda-later
-      (kbd "gd") 'org-agenda-toggle-time-grid
-      (kbd "gr") 'org-agenda-redo))
-  (with-eval-after-load 'org
-    (define-key org-read-date-minibuffer-local-map (kbd "M-h")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-day 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-l")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-day 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-k")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-week 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-j")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-week 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-H")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-month 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-L")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-month 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-K")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-year 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-J")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-year 1)))))
   (with-eval-after-load 'magit
     (evil-define-key 'motion magit-mode-map (kbd "M-j") 'magit-section-forward-sibling)
     (evil-define-key 'motion magit-mode-map (kbd "M-k") 'magit-section-backward-sibling))
