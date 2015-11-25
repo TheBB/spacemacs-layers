@@ -454,12 +454,12 @@
     "xe" (lambda () (interactive) (TeX-font nil ?\C-e)) ; Emphasis
     "xi" (lambda () (interactive) (TeX-font nil ?\C-i)) ; Italics
     "xr" (lambda () (interactive) (TeX-font nil ?\C-d)) ; Remove formatting
+    "xo" (lambda () (interactive) (TeX-font nil ?\C-s)) ; Oblique or blackboard math
     "xfa" (lambda () (interactive) (TeX-font nil ?\C-a)) ; Calligraphic math
     "xfc" (lambda () (interactive) (TeX-font nil ?\C-c)) ; Small caps
     "xff" (lambda () (interactive) (TeX-font nil ?\C-f)) ; Sans serif
     "xfn" (lambda () (interactive) (TeX-font nil ?\C-n)) ; Normal
     "xfr" (lambda () (interactive) (TeX-font nil ?\C-r)) ; Serif
-    "xfs" (lambda () (interactive) (TeX-font nil ?\C-s)) ; Oblique or blackb
     "xfu" (lambda () (interactive) (TeX-font nil ?\C-u)) ; Upright
     )
 
