@@ -447,6 +447,22 @@
           ("inst" "{"))
         )
 
+  (spacemacs/set-leader-keys-for-major-mode 'latex-mode
+    "xb" (lambda () (interactive) (TeX-font nil ?\C-b)) ; Bold
+    "xB" (lambda () (interactive) (TeX-font nil ?\C-f)) ; Medium
+    "xc" (lambda () (interactive) (TeX-font nil ?\C-t)) ; Code
+    "xe" (lambda () (interactive) (TeX-font nil ?\C-e)) ; Emphasis
+    "xi" (lambda () (interactive) (TeX-font nil ?\C-i)) ; Italics
+    "xr" (lambda () (interactive) (TeX-font nil ?\C-d)) ; Remove formatting
+    "xfa" (lambda () (interactive) (TeX-font nil ?\C-a)) ; Calligraphic math
+    "xfc" (lambda () (interactive) (TeX-font nil ?\C-c)) ; Small caps
+    "xff" (lambda () (interactive) (TeX-font nil ?\C-f)) ; Sans serif
+    "xfn" (lambda () (interactive) (TeX-font nil ?\C-n)) ; Normal
+    "xfr" (lambda () (interactive) (TeX-font nil ?\C-r)) ; Serif
+    "xfs" (lambda () (interactive) (TeX-font nil ?\C-s)) ; Oblique or blackb
+    "xfu" (lambda () (interactive) (TeX-font nil ?\C-u)) ; Upright
+    )
+
   ;; IRC
   (add-hook 'erc-insert-pre-hook
             (defun bb/erc-foolish-filter (msg)
