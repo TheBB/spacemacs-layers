@@ -332,6 +332,7 @@
                ("C" . c++-mode)
                ("h" . c++-mode)))
     (push (cons (concat "\\." (car e) "\\'") (cdr e)) auto-mode-alist))
+  (push '("PKGBUILD" . shell-script-mode) auto-mode-alist)
 
   ;; Keybindings
   (bb/define-key evil-normal-state-map
