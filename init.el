@@ -62,7 +62,8 @@
 
      ;; Personal config layers
      bb-c-styles
-     bb-ibuffer)
+     bb-ibuffer
+     bb-latex)
 
    dotspacemacs-additional-packages
    `(helm-flycheck
@@ -188,6 +189,8 @@
    ;; LaTeX
    font-latex-fontify-script nil
    TeX-newline-function 'reindent-then-newline-and-indent
+
+   ;; Shell
    shell-default-term-shell "/bin/zsh"
 
    ;; Web
@@ -416,36 +419,6 @@
                               (setq-local global-hl-line-mode nil))
                             comint-hooks))
   (add-hook 'inferior-emacs-lisp-mode-hook 'smartparens-mode)
-
-  ;; LaTeX
-  (setq font-latex-match-slide-title-keywords
-        '(("frametitle" "{"))
-        font-latex-match-function-keywords
-        '(("setbeamercovered" "{")
-          ("usetheme" "{")
-          ("usecolortheme" "{")
-          ("usetikzlibrary" "{")
-          ("reserveinserts" "{")
-          ("address" "{")
-          ("definecolor" "{{{")
-          ("includegraphics" "[{")
-          ("titlegraphic" "{")
-          ("newacronym" "{{{"))
-        font-latex-match-textual-keywords
-        '(("hfill" "" nil 'noarg)
-          ("textwidth" "" nil 'noarg)
-          ("titlepage" "" nil 'noarg)
-          ("and" "")
-          ("institute" "[{")
-          ("abstract" "{")
-          ("overview" "{")
-          ("doList" "{")
-          ("challengeList" "{")
-          ("ldots" "" nil 'noarg))
-        font-latex-match-reference-keywords
-        '(("autoref" "{")
-          ("inst" "{"))
-        )
 
   ;; IRC
   (add-hook 'erc-insert-pre-hook
