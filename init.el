@@ -73,7 +73,8 @@
 
      ,@(unless (string= system-type "windows-nt")
          '(powerline
-           (spaceline :location "~/repos/spaceline/"))))
+           (spaceline :location "~/repos/spaceline/")
+           (unicode-fonts :excluded t))))
 
    dotspacemacs-excluded-packages
    `(julia-mode
@@ -567,6 +568,9 @@
         :on (nameless-mode)
         :off (nameless-mode -1)
         :evil-leader-for-mode (emacs-lisp-mode . "o:"))))
+  (use-package unicode-fonts
+    :config
+    (unicode-fonts-setup))
   (use-package warnings
     :defer t
     :config
