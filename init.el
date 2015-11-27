@@ -324,6 +324,7 @@
   ;; Settings
   (setq-default
    tab-width 8
+   evil-shift-width 2
    evil-move-beyond-eol nil
    helm-echo-input-in-header-line nil
    powerline-default-separator 'alternate)
@@ -417,9 +418,6 @@
   (add-hook 'inferior-emacs-lisp-mode-hook 'smartparens-mode)
 
   ;; LaTeX
-  (add-hook 'LaTeX-mode-hook
-            (defun bb/shift-width-2 ()
-              (setq-local evil-shift-width 2)))
   (setq font-latex-match-slide-title-keywords
         '(("frametitle" "{"))
         font-latex-match-function-keywords
