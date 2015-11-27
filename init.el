@@ -326,9 +326,7 @@
    tab-width 8
    evil-move-beyond-eol nil
    helm-echo-input-in-header-line nil
-   powerline-default-separator 'alternate
-   spaceline-window-numbers-unicode t
-   spaceline-workspace-numbers-unicode t)
+   powerline-default-separator 'alternate)
 
   (dolist (e '(("xml" . web-mode)
                ("xinp" . web-mode)
