@@ -2,8 +2,7 @@
 
 (defun bb-latex/post-init-auctex ()
   (setq font-latex-match-function-keywords
-        '(
-          ("address" "{")
+        '(("address" "{")
           ("definecolor" "{{{")
           ("includegraphics" "[{")
           ("graphicspath" "{")
@@ -18,38 +17,27 @@
           ("usecolortheme" "{")
           ("usepgfplotslibrary" "{")
           ("usetheme" "{")
-          ("usetikzlibrary" "{")
-          )
+          ("usetikzlibrary" "{"))
         font-latex-match-italic-command-keywords
-        '(
-          ("url" "{")
-          )
+        '(("url" "{"))
         font-latex-match-reference-keywords
-        '(
-          ("autoref" "{")
-          ("inst" "{")
-          )
+        '(("autoref" "{")
+          ("inst" "{"))
         font-latex-match-slide-title-keywords
-        '(
-          ("frametitle" "{")
-          )
+        '(("frametitle" "{"))
         font-latex-match-textual-keywords
-        '(
-          ("abstract" "{")
+        '(("abstract" "{")
           ("and" "")
           ("challengeList" "{")
           ("doList" "{")
           ("hfill" "")
           ("institute" "[{")
           ("overview" "{")
-          ("titlepage" "")
-          )
+          ("titlepage" ""))
         font-latex-match-variable-keywords
-        '(
-          )
+        '()
         font-latex-match-warning-keywords
-        '(
-          )
+        '()
         font-latex-user-keyword-classes
         '(("variables"
            (("baselineskip" "")
@@ -62,11 +50,8 @@
             ("ldots" ""))
            font-lock-builtin-face noarg)
           ("tikz"
-           (
-            ("node" "")
-            ("draw" "")
+           (("foreach" "")
+            ("draw" "[")
             ("matrix" "[")
-            )
-           default command)
-          )
-        ))
+            ("node" "["))
+           default command))))
