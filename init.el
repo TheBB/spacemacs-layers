@@ -139,6 +139,7 @@
    indent-tabs-mode nil
    system-time-locale "C"
    paradox-github-token t
+   open-junk-file-find-file-function 'find-file
 
    ;; Backups
    backup-directory-alist `((".*" . ,temporary-file-directory))
