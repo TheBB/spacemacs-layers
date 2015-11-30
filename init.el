@@ -49,7 +49,8 @@
      (typography :variables typography-enable-typographic-editing t)
 
      ,@(unless (string= system-type "windows-nt")
-         '(fasd
+         '(dash
+           fasd
            gtags
            (spell-checking :variables spell-checking-enable-by-default nil)
            spotify))
