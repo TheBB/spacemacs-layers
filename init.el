@@ -373,6 +373,10 @@
           (call-interactively 'with-editor-finish)))
   (bb/define-key company-active-map
     (kbd "C-w") 'evil-delete-backward-word)
+  (with-eval-after-load 'org
+    (define-key org-mode-map (kbd "TAB") nil))
+  (with-eval-after-load 'evil-org
+    (evil-define-key 'normal evil-org-mode-map (kbd "TAB") nil))
 
   ;; Miscellaneous
   (add-hook 'text-mode-hook 'auto-fill-mode)
