@@ -20,6 +20,7 @@
      emoji
      erc
      ess
+     (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
      extra-langs
      eyebrowse
      games
