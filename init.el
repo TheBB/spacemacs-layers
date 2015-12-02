@@ -363,8 +363,6 @@
       (kbd "C-S-q") 'ace-jump-helm-line-execute-action))
   (spacemacs/set-leader-keys
     "os" 'just-one-space
-    "ot" 'helm-etags-select
-    "ov" 'evilmi-select-items
     "qw" (defun bb/maybe-quit ()
            (interactive)
            (if (cdr (visible-frame-list))
