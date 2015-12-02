@@ -353,7 +353,7 @@
            (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
   (bb/define-key evil-insert-state-map
     (kbd "C-e") 'move-end-of-line
-    (kbd "C-a") 'move-beginning-of-line)
+    (kbd "C-a") 'back-to-indentation)
   (bb/define-key evil-motion-state-map
     (kbd ";") 'helm-M-x)
   (bb/define-key evil-visual-state-map
