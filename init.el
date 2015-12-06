@@ -490,6 +490,18 @@
                  :nick "TheBB"
                  :full-name bb/full-name)))
 
+  (spacemacs|define-custom-layout "@ERC"
+    :binding "E"
+    :body
+    (progn
+      (call-interactively 'bb/gitter)
+      (call-interactively 'bb/freenode)))
+  (add-hook 'erc-join-hook
+            (defun bb/add-buffer-to-erc-persp ()
+              (persp-add-buffer (current-buffer)
+                                (persp-get-by-name "@ERC")
+                                nil)))
+
   ;; Evilification
   (with-eval-after-load 'magit
     (evil-define-key 'motion magit-mode-map (kbd "M-j") 'magit-section-forward-sibling)
