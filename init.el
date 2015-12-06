@@ -20,6 +20,7 @@
      emoji
      erc
      ess
+     (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
      extra-langs
      eyebrowse
      games
@@ -49,7 +50,8 @@
      (typography :variables typography-enable-typographic-editing t)
 
      ,@(unless (string= system-type "windows-nt")
-         '(fasd
+         '(dash
+           fasd
            gtags
            (spell-checking :variables spell-checking-enable-by-default nil)
            spotify))
@@ -62,7 +64,8 @@
 
      ;; Personal config layers
      bb-c-styles
-     bb-ibuffer)
+     bb-ibuffer
+     bb-latex)
 
    dotspacemacs-additional-packages
    `(helm-flycheck
@@ -73,7 +76,8 @@
 
      ,@(unless (string= system-type "windows-nt")
          '(powerline
-           (spaceline :location "~/repos/spaceline/"))))
+           (spaceline :location "~/repos/spaceline/")
+           (unicode-fonts :excluded t))))
 
    dotspacemacs-excluded-packages
    `(julia-mode
@@ -83,6 +87,7 @@
 (defun dotspacemacs/init ()
   (setq-default
    dotspacemacs-elpa-https t
+   dotspacemacs-elpa-timeout 10
    dotspacemacs-editing-style 'vim
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(recents bookmarks projects)
@@ -98,6 +103,8 @@
    dotspacemacs-emacs-leader-key "M-m"
    dotspacemacs-major-mode-leader-key ","
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
+   dotspacemacs-distinguish-gui-tab nil
+   dotspacemacs-distinguish-gui-ret nil
    dotspacemacs-command-key ":"
    dotspacemacs-remap-Y-to-y$ t
    dotspacemacs-default-layout-name "Home"
@@ -137,6 +144,7 @@
    indent-tabs-mode nil
    system-time-locale "C"
    paradox-github-token t
+   open-junk-file-find-file-function 'find-file
 
    ;; Backups
    backup-directory-alist `((".*" . ,temporary-file-directory))
@@ -187,6 +195,8 @@
    ;; LaTeX
    font-latex-fontify-script nil
    TeX-newline-function 'reindent-then-newline-and-indent
+
+   ;; Shell
    shell-default-term-shell "/bin/zsh"
 
    ;; Web
@@ -219,10 +229,16 @@
    org-default-notes-file "~/org/capture.org"
    org-agenda-files '("~/org/" "~/org/projects/" "~/org/misc/")
    org-catch-invisible-edits 'show-and-error
-   org-list-demote-modify-bullet '(("-" . "*")
-                                   ("*" . "+")
-                                   ("+" . "-"))
+   org-list-demote-modify-bullet '(("-" . "*") ("*" . "+") ("+" . "-"))
    org-list-allow-alphabetical t
+   org-todo-keywords
+   '((sequence "TODO(t)" "|" "DONE(D)")
+     (type "SIMPLE(s)" "FAST-TRACK(f)" "CONFLICTING(c)" "WAITING(w)" "DUBIOUS(d)"
+           "|" "MERGED(M)" "CLOSED(C)"))
+   org-todo-keyword-faces
+   '(("SIMPLE" . "khaki2")
+     ("FAST-TRACK" . "OrangeRed1")
+     ("WAITING" . "deepskyblue1"))
    org-capture-templates
    '(("t" "Tasks")
      ("tg" "General" entry (file+headline "" "Tasks")
@@ -317,6 +333,7 @@
   ;; Settings
   (setq-default
    tab-width 8
+   evil-shift-width 2
    evil-move-beyond-eol nil
    helm-echo-input-in-header-line nil
    powerline-default-separator 'alternate)
@@ -326,9 +343,11 @@
                ("C" . c++-mode)
                ("h" . c++-mode)))
     (push (cons (concat "\\." (car e) "\\'") (cdr e)) auto-mode-alist))
+  (push '("PKGBUILD" . shell-script-mode) auto-mode-alist)
 
   ;; Keybindings
   (bb/define-key evil-normal-state-map
+    (kbd ";") 'helm-M-x
     "+" 'spacemacs/evil-numbers-increase
     "_" 'spacemacs/evil-numbers-decrease
     "\\" 'evil-repeat-find-char-reverse
@@ -337,35 +356,26 @@
            (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
   (bb/define-key evil-insert-state-map
     (kbd "C-e") 'move-end-of-line
-    (kbd "C-a") 'move-beginning-of-line)
+    (kbd "C-a") 'back-to-indentation)
   (bb/define-key evil-motion-state-map
-    (kbd "<backspace>") 'helm-M-x)
+    (kbd ";") 'helm-M-x)
+  (bb/define-key evil-visual-state-map
+    (kbd ";") 'helm-M-x)
   (with-eval-after-load 'helm
     (bb/define-key helm-map
       (kbd "C-S-q") 'ace-jump-helm-line-execute-action))
-  (evil-leader/set-key
-    "ec" 'flycheck-clear
+  (spacemacs/set-leader-keys
     "os" 'just-one-space
-    "ot" 'helm-etags-select
-    "ov" 'evilmi-select-items
-    "oh" (defun bb/highlight ()
-           (interactive)
-           (hlt-highlight-region)
-           (keyboard-quit))
-    "oH" (defun bb/unhighlight ()
-           (interactive)
-           (hlt-unhighlight-region)
-           (keyboard-quit))
     "qw" (defun bb/maybe-quit ()
            (interactive)
            (if (cdr (visible-frame-list))
                (call-interactively 'spacemacs/frame-killer)
              (call-interactively 'spacemacs/prompt-kill-emacs))))
-  (evil-leader/set-key-for-mode 'text-mode
-    "m." (defun bb/empty-commit ()
-           (interactive)
-           (insert ".")
-           (call-interactively 'with-editor-finish)))
+  (spacemacs/set-leader-keys-for-major-mode 'text-mode
+    "." (defun bb/empty-commit ()
+          (interactive)
+          (insert ".")
+          (call-interactively 'with-editor-finish)))
   (bb/define-key company-active-map
     (kbd "C-w") 'evil-delete-backward-word)
 
@@ -373,6 +383,7 @@
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'makefile-mode-hook 'whitespace-mode)
   (add-hook 'erc-mode-hook 'typo-mode)
+  (add-hook 'LaTeX-mode-hook (lambda () (typo-mode -1)) 'append)
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
   ;; Text objects
@@ -413,44 +424,8 @@
                         comint-mode-hook)))
     (spacemacs/add-to-hooks (defun bb/no-hl-line-mode ()
                               (setq-local global-hl-line-mode nil))
-                            comint-hooks)
-    (spacemacs/add-to-hooks (defun bb/no-scroll-margin ()
-                              (setq-local scroll-margin 0))
                             comint-hooks))
   (add-hook 'inferior-emacs-lisp-mode-hook 'smartparens-mode)
-
-  ;; LaTeX
-  (add-hook 'LaTeX-mode-hook
-            (defun bb/shift-width-2 ()
-              (setq-local evil-shift-width 2)))
-  (setq font-latex-match-slide-title-keywords
-        '(("frametitle" "{"))
-        font-latex-match-function-keywords
-        '(("setbeamercovered" "{")
-          ("usetheme" "{")
-          ("usecolortheme" "{")
-          ("usetikzlibrary" "{")
-          ("reserveinserts" "{")
-          ("address" "{")
-          ("definecolor" "{{{")
-          ("includegraphics" "[{")
-          ("titlegraphic" "{")
-          ("newacronym" "{{{"))
-        font-latex-match-textual-keywords
-        '(("hfill" "" nil 'noarg)
-          ("textwidth" "" nil 'noarg)
-          ("titlepage" "" nil 'noarg)
-          ("and" "")
-          ("institute" "[{")
-          ("abstract" "{")
-          ("overview" "{")
-          ("doList" "{")
-          ("challengeList" "{")
-          ("ldots" "" nil 'noarg))
-        font-latex-match-reference-keywords
-        '(("autoref" "{")
-          ("inst" "{"))
-        )
 
   ;; IRC
   (add-hook 'erc-insert-pre-hook
@@ -499,7 +474,7 @@
   (with-eval-after-load 'erc
     (erc-track-mode -1))
 
-  (evil-leader/set-key
+  (spacemacs/set-leader-keys
     "aiq" 'erc-quit-server
     "aig" (defun bb/gitter ()
             (interactive)
@@ -516,40 +491,11 @@
                  :full-name bb/full-name)))
 
   ;; Evilification
-  (with-eval-after-load 'org-agenda
-    (evilified-state-evilify-map org-agenda-mode-map
-      :mode org-agenda-mode
-      :bindings
-      "j" 'org-agenda-next-line
-      "k" 'org-agenda-previous-line
-      (kbd "M-j") 'org-agenda-next-item
-      (kbd "M-k") 'org-agenda-previous-item
-      (kbd "M-h") 'org-agenda-earlier
-      (kbd "M-l") 'org-agenda-later
-      (kbd "gd") 'org-agenda-toggle-time-grid
-      (kbd "gr") 'org-agenda-redo))
-  (with-eval-after-load 'org
-    (define-key org-read-date-minibuffer-local-map (kbd "M-h")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-day 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-l")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-day 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-k")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-week 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-j")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-week 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-H")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-month 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-L")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-month 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-K")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-backward-year 1))))
-    (define-key org-read-date-minibuffer-local-map (kbd "M-J")
-      (lambda () (interactive) (org-eval-in-calendar '(calendar-forward-year 1)))))
   (with-eval-after-load 'magit
     (evil-define-key 'motion magit-mode-map (kbd "M-j") 'magit-section-forward-sibling)
     (evil-define-key 'motion magit-mode-map (kbd "M-k") 'magit-section-backward-sibling))
   (with-eval-after-load 'haskell-interactive-mode
-    (evilified-state-evilified-map haskell-error-mode-map
+    (evilified-state-evilify-map haskell-error-mode-map
       :mode haskell-error-mode))
   (with-eval-after-load 'proced
     (evilified-state-evilified-map proced-mode-map
@@ -562,7 +508,7 @@
   (use-package helm-flycheck
     :defer t
     :init
-    (evil-leader/set-key "eh" 'helm-flycheck))
+    (spacemacs/set-leader-keys "eh" 'helm-flycheck))
   (use-package helm-fuzzier
     :defer t
     :commands helm-fuzzier-mode
@@ -581,7 +527,10 @@
         :status nameless-mode
         :on (nameless-mode)
         :off (nameless-mode -1)
-        :evil-leader-for-mode (emacs-lisp-mode . "mo:"))))
+        :evil-leader-for-mode (emacs-lisp-mode . "o:"))))
+  (use-package unicode-fonts
+    :config
+    (unicode-fonts-setup))
   (use-package warnings
     :defer t
     :config

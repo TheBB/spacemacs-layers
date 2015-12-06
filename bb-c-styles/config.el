@@ -31,5 +31,5 @@
             (c-make-macro-with-semi-re)))
 
 (dolist (mode '(c-mode c++-mode))
-  (evil-leader/set-key-for-mode mode
-    "mos" 'c-set-style))
+  (spacemacs/set-leader-keys-for-major-mode mode
+    "os" 'c-set-style))
