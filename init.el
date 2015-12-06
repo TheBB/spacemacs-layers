@@ -496,7 +496,7 @@
     (progn
       (call-interactively 'bb/gitter)
       (call-interactively 'bb/freenode)))
-  (add-hook 'erc-join-hook
+  (add-hook 'erc-mode-hook
             (defun bb/add-buffer-to-erc-persp ()
               (persp-add-buffer (current-buffer)
                                 (persp-get-by-name "@ERC")
