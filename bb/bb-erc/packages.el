@@ -27,9 +27,6 @@
 
   (add-hook 'erc-insert-pre-hook 'bb/erc-foolish-filter)
 
-  (dolist (module '(track youtube image))
-    (setq erc-modules (remove module erc-modules)))
-
   (evil-set-initial-state 'erc-mode 'normal)
 
   (with-eval-after-load 'erc
@@ -41,6 +38,8 @@
             erc-match-message
             erc-add-timestamp
             erc-hl-nicks))
+    (dolist (module '(track youtube image))
+      (setq erc-modules (remove module erc-modules)))
     (erc-track-mode -1)))
 
 (defun bb-erc/post-init-emoji-cheat-sheet-plus ()
