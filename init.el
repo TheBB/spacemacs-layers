@@ -486,5 +486,4 @@
 
   ;; Load local
   (when (file-exists-p "~/local.el")
-    (load "~/local.el"))
-  )
+    (load "~/local.el")))
