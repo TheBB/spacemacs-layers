@@ -59,7 +59,6 @@
      ;; Non-contrib layers
      encoding
      evil-little-word
-     evil-shift-width
      no-dots
 
      ;; Personal config layers
