@@ -259,18 +259,6 @@
    '(("1\\.0\\.0" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel") ; Gitter
      ("irc.gitter.im" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel")
      ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs"))
-   erc-timestamp-format-left "\n%A %B %e, %Y\n\n"
-   erc-timestamp-format-right "%H:%M"
-   erc-timestamp-right-column 80
-   erc-prompt-for-nickserv-password nil
-   erc-image-inline-rescale 300
-   erc-hide-list '("JOIN" "PART" "QUIT" "NICK")
-   erc-foolish-content
-   '("\\[Github\\].* starred"
-     "\\[Github\\].* forked"
-     "\\[Github\\].* synchronize a Pull Request"
-     "\\[Github\\].* labeled an issue in"
-     "\\[Github\\].* unlabeled an issue in")
 
    ;; Theme modifications
    theming-modifications
@@ -381,7 +369,6 @@
   ;; Miscellaneous
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'makefile-mode-hook 'whitespace-mode)
-  (add-hook 'erc-mode-hook 'typo-mode)
   (add-hook 'LaTeX-mode-hook (lambda () (typo-mode -1)) 'append)
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
@@ -409,8 +396,7 @@
     (bb/remove-from-list semantic-submode-list 'global-semantic-stickyfunc-mode))
 
   ;; Some fixes for comint-style buffers
-  (dolist (mode '(erc-mode
-                  comint-mode
+  (dolist (mode '(comint-mode
                   term-mode
                   eshell-mode
                   inferior-emacs-lisp-mode))
@@ -418,88 +404,20 @@
 
   (let ((comint-hooks '(eshell-mode-hook
                         term-mode-hook
-                        erc-mode-hook
                         messages-buffer-mode-hook
                         comint-mode-hook)))
     (spacemacs/add-to-hooks (defun bb/no-hl-line-mode ()
-                              (setq-local global-hl-line-mode nil))
-                            comint-hooks))
+                       (setq-local global-hl-line-mode nil))
+                     comint-hooks))
   (add-hook 'inferior-emacs-lisp-mode-hook 'smartparens-mode)
 
   ;; IRC
-  (add-hook 'erc-insert-pre-hook
-            (defun bb/erc-foolish-filter (msg)
-              "Ignores messages matching `erc-foolish-content'."
-              (when (erc-list-match erc-foolish-content msg)
-                (setq erc-insert-this nil))))
-
-  (defun bb/erc-github-filter ()
-    "Shortens messages from gitter."
+  (defun bb/erc ()
     (interactive)
-    (when (and (< 18 (- (point-max) (point-min)))
-               (string= (buffer-substring (point-min)
-                                          (+ (point-min) 18))
-                        "<gitter> [Github] "))
-      (dolist (regexp '(" \\[Github\\]"
-                        " \\(?:in\\|to\\) [^ /]+/[^ /:]+"))
-        (goto-char (point-min))
-        (when (re-search-forward regexp (point-max) t)
-          (replace-match "")))
-      (goto-char (point-min))
-      (when (re-search-forward
-             "https?://github\\.com/[^/]+/[^/]+/[^/]+/\\([[:digit:]]+\\)\\([^[:space:]]*\\)?"
-             (point-max) t)
-        (let* ((url (match-string 0))
-               (number (match-string 1))
-               (start (+ 1 (match-beginning 0)))
-               (end (+ 1 (length number) start)))
-          (replace-match (format "(#%s)" (match-string 1)))
-          (erc-button-add-button start end 'browse-url nil (list url)))
-        )))
-
-  (with-eval-after-load 'erc
-    (setq erc-insert-modify-hook
-          '(erc-controls-highlight
-            erc-button-add-buttons
-            bb/erc-github-filter
-            erc-fill
-            erc-match-message
-            erc-add-timestamp
-            erc-hl-nicks)))
-
-  (add-hook 'erc-mode-hook 'emoji-cheat-sheet-plus-display-mode)
-  (dolist (module '(track youtube image))
-    (bb/remove-from-list erc-modules module))
-  (with-eval-after-load 'erc
-    (erc-track-mode -1))
-
-  (spacemacs/set-leader-keys
-    "aiq" 'erc-quit-server
-    "aig" (defun bb/gitter ()
-            (interactive)
-            (erc-tls :server "irc.gitter.im"
-                     :port "6667"
-                     :nick "TheBB"
-                     :password bb/gitter-pwd
-                     :full-name bb/full-name))
-    "aif" (defun bb/freenode ()
-            (interactive)
-            (erc :server "irc.freenode.net"
-                 :port "6667"
-                 :nick "TheBB"
-                 :full-name bb/full-name)))
-
-  (spacemacs|define-custom-layout "@ERC"
-    :binding "E"
-    :body
-    (progn
-      (call-interactively 'bb/gitter)
-      (call-interactively 'bb/freenode)))
-  (add-hook 'erc-mode-hook
-            (defun bb/add-buffer-to-erc-persp ()
-              (persp-add-buffer (current-buffer)
-                                (persp-get-by-name "@ERC")
-                                nil)))
+    (erc-tls :server "irc.gitter.im" :port "6667" :nick "TheBB"
+             :password bb/gitter-pwd :full-name bb/full-name)
+    (erc :server "irc.freenode.net" :port "6667" :nick "TheBB" :full-name bb/full-name))
+  (spacemacs/set-leader-keys "aii" 'bb/erc)
 
   ;; Evilification
   (with-eval-after-load 'magit
