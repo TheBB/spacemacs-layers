@@ -16,6 +16,7 @@
      clojure
      csharp
      django
+     elfeed
      emacs-lisp
      emoji
      erc
@@ -80,7 +81,8 @@
            (unicode-fonts :excluded t))))
 
    dotspacemacs-excluded-packages
-   `(julia-mode
+   `(elfeed-org
+     julia-mode
      ,@(when (string= system-type "windows-nt")
          '(evil-mc)))))
 
@@ -212,6 +214,11 @@
    nameless-discover-current-name nil
    nameless-prefix ""
    nameless-separator nil
+
+   ;; Elfeed
+   elfeed-feeds
+   '("https://www.reddit.com/r/emacs/.rss"
+     "http://xkcd.com/rss.xml")
 
    ;; Org
    org-tags-column -80
