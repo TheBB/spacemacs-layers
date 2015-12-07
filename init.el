@@ -170,7 +170,6 @@
    sp-highlight-wrap-tag-overlay nil
 
    ;; Magit
-   magit-push-always-verify nil
    magit-popup-show-common-commands nil
 
    ;; Flycheck
