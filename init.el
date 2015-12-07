@@ -64,6 +64,7 @@
 
      ;; Personal config layers
      bb-c-styles
+     bb-erc
      bb-ibuffer
      bb-latex)
 
