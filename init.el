@@ -457,9 +457,10 @@
         :on (nameless-mode)
         :off (nameless-mode -1)
         :evil-leader-for-mode (emacs-lisp-mode . "o:"))))
-  (use-package unicode-fonts
-    :config
-    (unicode-fonts-setup))
+  (when (configuration-layer/package-usedp 'unicode-fonts)
+    (use-package unicode-fonts
+      :config
+      (unicode-fonts-setup)))
   (use-package warnings
     :defer t
     :config
