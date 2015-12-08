@@ -46,12 +46,6 @@
   (add-hook 'erc-mode-hook 'emoji-cheat-sheet-plus-display-mode))
 
 (defun bb-erc/post-init-persp-mode ()
-  (spacemacs|define-custom-layout "@ERC"
-    :binding "E"
-    :body
-    (progn
-      (call-interactively 'bb/gitter)
-      (call-interactively 'bb/freenode)))
   (add-hook 'erc-mode-hook 'bb/add-buffer-to-erc-persp))
 
 (defun bb-erc/post-init-typo ()
