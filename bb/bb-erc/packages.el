@@ -20,6 +20,7 @@
      "\\[Github\\].* forked"
      "\\[Github\\].* synchronize a Pull Request"
      "\\[Github\\].* labeled an issue in"
+     "\\[Github\\].* labeled a Pull Request"
      "\\[Github\\].* unlabeled an issue in"))
 
   (add-hook 'erc-mode-hook
