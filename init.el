@@ -349,6 +349,7 @@
     "]s" (lambda (n) (interactive "p")
            (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
   (bb/define-key evil-insert-state-map
+    (kbd "C-'") 'hippie-expand
     (kbd "C-e") 'move-end-of-line
     (kbd "C-a") 'back-to-indentation)
   (bb/define-key evil-motion-state-map
