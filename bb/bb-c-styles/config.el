@@ -18,6 +18,8 @@
                 (inextern-lang . 0)
                 (innamespace . 0))))
 
+(push '(other . "bb") c-default-style)
+
 (setq-default c-macro-names-with-semicolon
               '("Q_OBJECT"
                 "Q_PROPERTY"
@@ -25,10 +27,7 @@
                 "Q_ENUMS"
                 "Q_INTERFACES"))
 
-(add-hook 'c-mode-common-hook
-          (defun bb-c-styles/set-c-style ()
-            (c-set-style "bb")
-            (c-make-macro-with-semi-re)))
+(add-hook 'c-mode-common-hook 'c-make-macro-with-semi-re)
 
 (dolist (mode '(c-mode c++-mode))
   (spacemacs/set-leader-keys-for-major-mode mode
