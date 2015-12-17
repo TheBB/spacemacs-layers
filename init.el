@@ -14,6 +14,7 @@
       :disabled-for org erc)
      c-c++
      clojure
+     command-log
      csharp
      django
      elfeed
