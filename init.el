@@ -366,7 +366,12 @@
            (interactive)
            (if (cdr (visible-frame-list))
                (call-interactively 'spacemacs/frame-killer)
-             (call-interactively 'spacemacs/prompt-kill-emacs))))
+             (call-interactively 'spacemacs/prompt-kill-emacs)))
+    "qf" (defun bb/save-delete-quit ()
+           (interactive)
+           (spacemacs/write-file)
+           (kill-this-buffer)
+           (bb/maybe-quit)))
   (spacemacs/set-leader-keys-for-major-mode 'text-mode
     "." (defun bb/empty-commit ()
           (interactive)
