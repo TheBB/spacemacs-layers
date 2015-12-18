@@ -266,7 +266,7 @@
    erc-autojoin-channels-alist
    '(("1\\.0\\.0" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel") ; Gitter
      ("irc.gitter.im" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel")
-     ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs"))
+     ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs" "#evil-mode"))
 
    ;; Theme modifications
    theming-modifications
