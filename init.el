@@ -48,8 +48,6 @@
               theming-headings-bold 'all)
      unimpaired
      version-control
-     yaml
-     (typography :variables typography-enable-typographic-editing t)
 
      ,@(unless (string= system-type "windows-nt")
          '(dash
@@ -350,7 +348,7 @@
     "]s" (lambda (n) (interactive "p")
            (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
   (bb/define-key evil-insert-state-map
-    (kbd "C-'") 'hippie-expand
+    (kbd "M-SPC") 'hippie-expand
     (kbd "C-e") 'move-end-of-line
     (kbd "C-a") 'back-to-indentation)
   (bb/define-key evil-motion-state-map
