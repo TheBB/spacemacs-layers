@@ -381,7 +381,6 @@
   ;; Miscellaneous
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'makefile-mode-hook 'whitespace-mode)
-  (add-hook 'LaTeX-mode-hook (lambda () (typo-mode -1)) 'append)
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
   ;; Text objects
