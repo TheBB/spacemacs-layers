@@ -17,6 +17,7 @@
      command-log
      csharp
      django
+     elixir
      elfeed
      emacs-lisp
      emoji
