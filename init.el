@@ -47,6 +47,7 @@
               theming-headings-inherit-from-default 'all
               theming-headings-same-size 'all
               theming-headings-bold 'all)
+     typography
      unimpaired
      version-control
 
