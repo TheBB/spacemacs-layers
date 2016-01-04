@@ -326,7 +326,6 @@
   ;; Settings
   (setq-default
    tab-width 8
-   evil-shift-width 2
    evil-move-beyond-eol nil
    helm-echo-input-in-header-line nil
    powerline-default-separator 'alternate)
@@ -382,13 +381,6 @@
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'makefile-mode-hook 'whitespace-mode)
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
-
-  ;; Text objects
-  (spacemacs|define-text-object "/" "slash" "/" "/")
-  (spacemacs|define-text-object "_" "underscore" "_" "_")
-  (spacemacs|define-text-object "-" "hyphen" "-" "-")
-  (spacemacs|define-text-object "~" "tilde" "~" "~")
-  (spacemacs|define-text-object "=" "equal" "=" "=")
 
   ;; Diminish
   (when (eq 'hybrid dotspacemacs-editing-style)
