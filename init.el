@@ -486,6 +486,12 @@
         (when fuzzy (helm-fuzzier-mode 1)))))
   (advice-add 'helm-locate-library :around 'bb/helm-locate-library)
 
+  ;; https://github.com/syl20bnr/spacemacs/issues/4387
+  (add-hook 'magit-mode-hook
+            (lambda ()
+              (when evil-jumper-mode
+                (evil-jumper-mode -1))))
+
   ;; Load local
   (when (file-exists-p "~/local.el")
     (load "~/local.el")))
