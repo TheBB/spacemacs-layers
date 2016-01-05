@@ -95,6 +95,7 @@
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(recents bookmarks projects)
    dotspacemacs-startup-recent-list-size 5
+   dotspacemacs-scratch-mode 'lisp-interaction-mode
    dotspacemacs-themes
    '(monokai material spacemacs-dark spacemacs-light solarized-dark leuven zenburn)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -491,6 +492,10 @@
             (lambda ()
               (when evil-jumper-mode
                 (evil-jumper-mode -1))))
+
+  ;; Smartparens has bugs in web-mode
+  (add-hook 'web-mode-hook 'spacemacs/toggle-smartparens-off 'append)
+  (setq web-mode-enable-auto-pairing t)
 
   ;; Load local
   (when (file-exists-p "~/local.el")
