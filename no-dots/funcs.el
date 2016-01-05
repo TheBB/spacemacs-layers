@@ -1,7 +1,11 @@
 (require 'cl-lib)
 
+(defun no-dots/whitelistedp ()
+  (member (with-helm-buffer (buffer-name)) no-dots-whitelist))
+
 (defun no-dots/helm-ff-filter-candidate-one-by-one (fcn file)
-  (unless (string-match "\\(?:/\\|\\`\\)\\.\\{1,2\\}\\'" file)
+  (when (or (no-dots/whitelistedp)
+            (not (string-match "\\(?:/\\|\\`\\)\\.\\{1,2\\}\\'" file)))
     (funcall fcn file)))
 
 (defun no-dots/helm-file-completion-source-p (&rest args) t)
