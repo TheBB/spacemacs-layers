@@ -50,6 +50,7 @@
      typography
      unimpaired
      version-control
+     vimscript
 
      ,@(unless (string= system-type "windows-nt")
          '(dash
