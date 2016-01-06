@@ -107,7 +107,7 @@
    dotspacemacs-emacs-leader-key "M-m"
    dotspacemacs-major-mode-leader-key ","
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
-   dotspacemacs-distinguish-gui-tab nil
+   dotspacemacs-distinguish-gui-tab t
    dotspacemacs-command-key ":"
    dotspacemacs-remap-Y-to-y$ t
    dotspacemacs-default-layout-name "Home"
@@ -353,7 +353,8 @@
     (kbd "C-e") 'move-end-of-line
     (kbd "C-a") 'back-to-indentation)
   (bb/define-key evil-motion-state-map
-    (kbd ";") 'helm-M-x)
+    (kbd ";") 'helm-M-x
+    (kbd "<C-i>") 'evil-jumper/forward)
   (bb/define-key evil-visual-state-map
     (kbd ";") 'helm-M-x)
   (with-eval-after-load 'helm
