@@ -421,15 +421,12 @@
   (add-hook 'inferior-emacs-lisp-mode-hook 'smartparens-mode)
 
   ;; IRC
-  (defun bb/erc ()
-    (interactive)
+  (spacemacs|define-custom-layout "@ERC"
+    :binding "E"
+    :body
     (erc-tls :server "irc.gitter.im" :port "6667" :nick "TheBB"
              :password bb/gitter-pwd :full-name bb/full-name)
     (erc :server "irc.freenode.net" :port "6667" :nick "TheBB" :full-name bb/full-name))
-  (spacemacs|define-custom-layout "@ERC"
-    :binding "E"
-    :body (call-interactively 'bb/erc))
-  (spacemacs/set-leader-keys "aii" 'bb/erc)
 
   ;; Evilification
   (with-eval-after-load 'magit
