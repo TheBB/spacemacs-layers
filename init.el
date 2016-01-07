@@ -323,9 +323,6 @@
     (while bindings
       (define-key keymap (pop bindings) (pop bindings))))
 
-  (defmacro bb/remove-from-list (list-var element)
-    `(setq ,list-var (remove ,element ,list-var)))
-
   ;; Settings
   (setq-default
    tab-width 8
@@ -402,14 +399,14 @@
 
   ;; Semantic fucks up scrolling
   (with-eval-after-load 'semantic
-    (bb/remove-from-list semantic-submode-list 'global-semantic-stickyfunc-mode))
+    (setq semantic-submode-list (delq 'global-semantic-stickyfunc-mode semantic-submode-list)))
 
   ;; Some fixes for comint-style buffers
   (dolist (mode '(comint-mode
                   term-mode
                   eshell-mode
                   inferior-emacs-lisp-mode))
-    (bb/remove-from-list evil-insert-state-modes mode))
+    (evil-set-initial-state mode 'normal))
 
   (let ((comint-hooks '(eshell-mode-hook
                         term-mode-hook
