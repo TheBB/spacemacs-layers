@@ -30,16 +30,6 @@ versions of Spacemacs, you can toggle `subword-mode` with `SPC t c`, allowing
 regular word motions and text objects to work the same way. With this layer you
 don't need a toggle.
 
-### evil-shift-width
-
-This layer is deprecated and will be removed soon. The functionality it provides
-is in Spacemacs 0.105 by default.
-
-### modify-theme
-
-This layer is deprecated and will be removed soon. Use the `theming` layer which
-is now in Spacemacs 0.105 instead.
-
 ### no-dots
 
 By default it's impossible to ignore the dotted directories `.` and `..` in
