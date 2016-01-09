@@ -353,8 +353,7 @@
     (kbd "C-e") 'move-end-of-line
     (kbd "C-a") 'back-to-indentation)
   (bb/define-key evil-motion-state-map
-    (kbd ";") 'helm-M-x
-    (kbd "<C-i>") 'evil-jumper/forward)
+    (kbd ";") 'helm-M-x)
   (bb/define-key evil-visual-state-map
     (kbd ";") 'helm-M-x)
   (with-eval-after-load 'helm
