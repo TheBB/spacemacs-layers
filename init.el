@@ -366,7 +366,7 @@
            (spacemacs/write-file)
            (kill-this-buffer)
            (bb/maybe-quit))
-    "feh" 'helm-spacemacs)
+    "feh" 'helm-spacemacs-help)
   (spacemacs/set-leader-keys-for-major-mode 'text-mode
     "." (defun bb/empty-commit ()
           (interactive)
