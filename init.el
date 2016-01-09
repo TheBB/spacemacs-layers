@@ -341,7 +341,6 @@
 
   ;; Keybindings
   (bb/define-key evil-normal-state-map
-    (kbd ";") 'helm-M-x
     "+" 'spacemacs/evil-numbers-increase
     "_" 'spacemacs/evil-numbers-decrease
     "\\" 'evil-repeat-find-char-reverse
@@ -352,10 +351,6 @@
     (kbd "M-SPC") 'hippie-expand
     (kbd "C-e") 'move-end-of-line
     (kbd "C-a") 'back-to-indentation)
-  (bb/define-key evil-motion-state-map
-    (kbd ";") 'helm-M-x)
-  (bb/define-key evil-visual-state-map
-    (kbd ";") 'helm-M-x)
   (with-eval-after-load 'helm
     (bb/define-key helm-map
       (kbd "C-S-q") 'ace-jump-helm-line-execute-action))
