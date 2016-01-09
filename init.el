@@ -110,7 +110,7 @@
    dotspacemacs-major-mode-leader-key ","
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
    dotspacemacs-distinguish-gui-tab t
-   dotspacemacs-command-key ":"
+   dotspacemacs-emacs-command-key "SPC"
    dotspacemacs-remap-Y-to-y$ t
    dotspacemacs-default-layout-name "Home"
    dotspacemacs-display-default-layout nil
