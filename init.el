@@ -97,7 +97,7 @@
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(recents bookmarks projects)
    dotspacemacs-startup-recent-list-size 5
-   dotspacemacs-scratch-mode 'lisp-interaction-mode
+   dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes
    '(monokai material spacemacs-dark spacemacs-light solarized-dark leuven zenburn)
    dotspacemacs-colorize-cursor-according-to-state t
@@ -112,6 +112,7 @@
    dotspacemacs-distinguish-gui-tab t
    dotspacemacs-emacs-command-key "SPC"
    dotspacemacs-remap-Y-to-y$ t
+   dotspacemacs-ex-substitute-global t
    dotspacemacs-default-layout-name "Home"
    dotspacemacs-display-default-layout nil
    dotspacemacs-auto-resume-layouts nil
