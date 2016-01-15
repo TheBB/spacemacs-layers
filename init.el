@@ -39,6 +39,7 @@
      python
      ranger
      ruby
+     rust
      semantic
      (shell :variables shell-default-shell 'eshell)
      shell-scripts
@@ -219,6 +220,9 @@
    nameless-prefix ""
    nameless-separator nil
 
+   ;; Rust
+   rust-indent-method-chain t
+
    ;; Elfeed
    elfeed-feeds
    '("https://www.reddit.com/r/emacs/.rss"
@@ -386,6 +390,8 @@
     (diminish 'hybrid-mode))
   (with-eval-after-load 'emoji-cheat-sheet-plus
     (diminish 'emoji-cheat-sheet-plus-display-mode))
+  (with-eval-after-load 'racer
+    (diminish 'racer-mode))
   (unless (spacemacs/system-is-mswindows)
     (with-eval-after-load 'helm-gtags
       (diminish 'helm-gtags-mode)))
