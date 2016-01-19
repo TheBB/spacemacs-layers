@@ -49,7 +49,6 @@
               theming-headings-same-size 'all
               theming-headings-bold 'all)
      typography
-     unimpaired
      version-control
      vimscript
 
