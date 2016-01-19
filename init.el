@@ -371,7 +371,9 @@
            (spacemacs/write-file)
            (kill-this-buffer)
            (bb/maybe-quit))
-    "feh" 'helm-spacemacs-help)
+    "feh" 'helm-spacemacs-help
+    "," 'avy-goto-char
+    "." 'avy-goto-char-2)
   (spacemacs/set-leader-keys-for-major-mode 'text-mode
     "." (defun bb/empty-commit ()
           (interactive)
