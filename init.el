@@ -51,6 +51,7 @@
      typography
      version-control
      vimscript
+     yaml
 
      ,@(unless (string= system-type "windows-nt")
          '(dash
