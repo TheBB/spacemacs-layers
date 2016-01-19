@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: connection
+# key: con
+# binding: direct-keybinding
+# --
+<connection master="$1" medge="$2" slave="$3" sedge="$4" reverse="${5:false}" />$0

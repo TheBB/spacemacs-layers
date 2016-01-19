@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: item
+# key: it
+# binding: direct-keybinding
+# --
+<item patch="$1">$2</item>$0
