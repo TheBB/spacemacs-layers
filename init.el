@@ -94,7 +94,7 @@
    dotspacemacs-elpa-https t
    dotspacemacs-elpa-timeout 10
    dotspacemacs-check-for-update t
-   dotspacemacs-editing-style 'vim
+   dotspacemacs-editing-style 'hybrid
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(recents bookmarks projects)
    dotspacemacs-startup-recent-list-size 5
@@ -381,6 +381,7 @@
           (call-interactively 'with-editor-finish)))
   (bb/define-key company-active-map
     (kbd "C-w") 'evil-delete-backward-word)
+  (evil-define-key 'normal evil-jumper-mode-map (kbd "<C-i>") 'evil-jumper/forward)
 
   ;; Miscellaneous
   (add-hook 'text-mode-hook 'auto-fill-mode)
@@ -488,12 +489,6 @@
           (apply orig-fn args)
         (when fuzzy (helm-fuzzier-mode 1)))))
   (advice-add 'helm-locate-library :around 'bb/helm-locate-library)
-
-  ;; https://github.com/syl20bnr/spacemacs/issues/4387
-  (add-hook 'magit-mode-hook
-            (lambda ()
-              (when evil-jumper-mode
-                (evil-jumper-mode -1))))
 
   ;; Smartparens has bugs in web-mode
   (add-hook 'web-mode-hook 'spacemacs/toggle-smartparens-off 'append)
