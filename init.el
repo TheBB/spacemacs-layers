@@ -382,7 +382,6 @@
           (call-interactively 'with-editor-finish)))
   (bb/define-key company-active-map
     (kbd "C-w") 'evil-delete-backward-word)
-  (evil-define-key 'normal evil-jumper-mode-map (kbd "<C-i>") 'evil-jumper/forward)
 
   ;; Miscellaneous
   (add-hook 'text-mode-hook 'auto-fill-mode)
