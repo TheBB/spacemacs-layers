@@ -164,6 +164,7 @@
 
    ;; Evil
    evil-shift-round nil
+   evil-want-C-i-jump t
 
    ;; Whitespace mode
    whitespace-style '(face tabs tab-mark newline-mark)
