@@ -49,7 +49,7 @@
               theming-headings-same-size 'all
               theming-headings-bold 'all)
      typography
-     version-control
+     (version-control :variables version-control-diff-tool 'diff-hl)
      vimscript
      yaml
 
