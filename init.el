@@ -242,7 +242,7 @@
    org-agenda-window-setup 'other-window
    org-directory "~/org"
    org-default-notes-file "~/org/capture.org"
-   org-agenda-files '("~/org/" "~/org/projects/" "~/org/misc/")
+   org-agenda-files '("~/org/agenda.org")
    org-catch-invisible-edits 'show-and-error
    org-list-demote-modify-bullet '(("-" . "*") ("*" . "+") ("+" . "-"))
    org-list-allow-alphabetical t
