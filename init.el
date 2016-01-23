@@ -395,6 +395,8 @@
     (diminish 'emoji-cheat-sheet-plus-display-mode))
   (with-eval-after-load 'racer
     (diminish 'racer-mode))
+  (with-eval-after-load 'command-log-mode
+    (diminish 'command-log-mode))
   (unless (spacemacs/system-is-mswindows)
     (with-eval-after-load 'helm-gtags
       (diminish 'helm-gtags-mode)))
