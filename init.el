@@ -348,8 +348,8 @@
 
   ;; Keybindings
   (bb/define-key evil-normal-state-map
-    "+" 'spacemacs/evil-numbers-increase
-    "_" 'spacemacs/evil-numbers-decrease
+    "+" 'spacemacs/evil-numbers-transient-state/evil-numbers/inc-at-pt
+    "_" 'spacemacs/evil-numbers-transient-state/evil-numbers/dec-at-pt
     "\\" 'evil-repeat-find-char-reverse
     "[s" (lambda (n) (interactive "p") (dotimes (c n nil) (insert " ")))
     "]s" (lambda (n) (interactive "p")
