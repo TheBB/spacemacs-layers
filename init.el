@@ -362,6 +362,7 @@
     (bb/define-key helm-map
       (kbd "C-S-q") 'ace-jump-helm-line-execute-action))
   (spacemacs/set-leader-keys
+    "ee" 'evil-edit
     "os" 'just-one-space
     "qw" (defun bb/maybe-quit ()
            (interactive)
