@@ -86,6 +86,7 @@
    dotspacemacs-excluded-packages
    `(elfeed-org
      julia-mode
+     vi-tilde-fringe
      ,@(when (string= system-type "windows-nt")
          '(evil-mc)))))
 
