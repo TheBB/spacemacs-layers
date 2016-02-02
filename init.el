@@ -12,7 +12,7 @@
       auto-completion-tab-key-behavior 'cycle
       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
       :disabled-for org erc)
-     c-c++
+     (c-c++ :variables c-c++-enable-clang-support t)
      clojure
      command-log
      csharp
