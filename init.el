@@ -394,8 +394,8 @@
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
   ;; Diminish
-  (when (eq 'hybrid dotspacemacs-editing-style)
-    (diminish 'hybrid-mode))
+  (spacemacs|diminish hybrid-mode)
+  (spacemacs|diminish which-key-mode)
   (with-eval-after-load 'emoji-cheat-sheet-plus
     (diminish 'emoji-cheat-sheet-plus-display-mode))
   (with-eval-after-load 'racer
