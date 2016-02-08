@@ -234,6 +234,7 @@
 
    ;; Org
    org-tags-column -80
+   org-startup-indented t
    org-clock-into-drawer "LOGBOOK"
    org-log-into-drawer "LOGBOOK"
    org-startup-align-all-tables t
