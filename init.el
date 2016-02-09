@@ -500,10 +500,6 @@
         (when fuzzy (helm-fuzzier-mode 1)))))
   (advice-add 'helm-locate-library :around 'bb/helm-locate-library)
 
-  ;; Smartparens has bugs in web-mode
-  (add-hook 'web-mode-hook 'spacemacs/toggle-smartparens-off 'append)
-  (setq web-mode-enable-auto-pairing t)
-
   ;; Load local
   (when (file-exists-p "~/local.el")
     (load "~/local.el")))
