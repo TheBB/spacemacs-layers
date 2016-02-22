@@ -73,8 +73,6 @@
 
    dotspacemacs-additional-packages
    `(helm-flycheck
-     ;; (helm-fuzzier :location (recipe :fetcher github
-     ;;                                 :repo "EphramPerdition/helm-fuzzier"))
      nameless
      nginx-mode
 
@@ -463,12 +461,6 @@
     :defer t
     :init
     (spacemacs/set-leader-keys "eh" 'helm-flycheck))
-  ;; (use-package helm-fuzzier
-  ;;   :defer t
-  ;;   :commands helm-fuzzier-mode
-  ;;   :init
-  ;;   (with-eval-after-load 'helm
-  ;;     (helm-fuzzier-mode 1)))
   (use-package nginx-mode
     :defer t
     :mode ("nginx\\.conf\\'" "/etc/nginx/.*\\'"))
@@ -490,17 +482,6 @@
     :defer t
     :config
     (push '(undo discard-info) warning-suppress-types))
-
-  ;; Workarounds
-
-  ;; https://github.com/EphramPerdition/helm-fuzzier/issues/9
-  ;; (defun bb/helm-locate-library (orig-fn &rest args)
-  ;;   (let ((fuzzy helm-fuzzier-mode))
-  ;;     (prog2
-  ;;         (when fuzzy (helm-fuzzier-mode -1))
-  ;;         (apply orig-fn args)
-  ;;       (when fuzzy (helm-fuzzier-mode 1)))))
-  ;; (advice-add 'helm-locate-library :around 'bb/helm-locate-library)
 
   ;; Load local
   (when (file-exists-p "~/local.el")
