@@ -69,7 +69,8 @@
      bb-c-styles
      bb-erc
      bb-ibuffer
-     bb-latex)
+     bb-latex
+     bb-git)
 
    dotspacemacs-additional-packages
    `(helm-flycheck
@@ -85,6 +86,7 @@
    `(clj-refactor
      elfeed-org
      julia-mode
+     magit-gh-pulls
      vi-tilde-fringe
      ,@(when (string= system-type "windows-nt")
          '(evil-mc)))))
