@@ -85,7 +85,6 @@
    `(clj-refactor
      elfeed-org
      julia-mode
-     helm-flx
      vi-tilde-fringe
      ,@(when (string= system-type "windows-nt")
          '(evil-mc)))))
