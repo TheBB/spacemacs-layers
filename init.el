@@ -325,6 +325,7 @@
        :inherit font-lock-comment-face :foreground nil)
       (evil-search-highlight-persist-highlight-face
        :background "#fc5fef" :foreground "#000000")
+      (helm-ff-prefix :background nil :foreground "#666666" :weight bold)
       (region :background "#998f84")
       (spacemacs-transient-state-title-face :background nil :foreground nil :inherit font-lock-warning-face)
       (term :foreground nil :background nil)))))
