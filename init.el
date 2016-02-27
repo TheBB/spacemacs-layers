@@ -486,6 +486,11 @@
     :config
     (push '(undo discard-info) warning-suppress-types))
 
+  ;; Workarounds
+
+  ;; https://github.com/syl20bnr/spacemacs/issues/5261
+  (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
+
   ;; Load local
   (when (file-exists-p "~/local.el")
     (load "~/local.el")))
