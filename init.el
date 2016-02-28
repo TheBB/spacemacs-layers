@@ -398,6 +398,7 @@
   ;; Miscellaneous
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'makefile-mode-hook 'whitespace-mode)
+  (add-hook 'prog-mode-hook 'page-break-lines-mode)
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
   (defun bb/comments ()
