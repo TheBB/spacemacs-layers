@@ -38,6 +38,7 @@
      org
      python
      ranger
+     react
      ruby
      rust
      semantic
