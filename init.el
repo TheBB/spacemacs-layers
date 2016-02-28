@@ -400,6 +400,11 @@
   (add-hook 'makefile-mode-hook 'whitespace-mode)
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
+  (defun bb/comments ()
+    (setq-local comment-start "// ")
+    (setq-local comment-end ""))
+  (spacemacs/add-to-hooks 'bb/comments '(c-mode-common-hook))
+
   ;; Diminish
   (spacemacs|diminish hybrid-mode)
   (spacemacs|diminish which-key-mode)
