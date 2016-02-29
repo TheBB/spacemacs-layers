@@ -399,13 +399,19 @@
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'makefile-mode-hook 'whitespace-mode)
   (add-hook 'prog-mode-hook 'page-break-lines-mode)
-  (add-hook 'after-change-major-mode-hook 'turn-on-evil-mc-mode)
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
   (defun bb/comments ()
     (setq-local comment-start "// ")
     (setq-local comment-end ""))
   (spacemacs/add-to-hooks 'bb/comments '(c-mode-common-hook))
+
+  ;; Evil MC
+  (defun bb/clear-anzu () (setq anzu--state nil))
+  (add-hook 'after-change-major-mode-hook 'turn-on-evil-mc-mode)
+  (add-hook 'evil-mc-mode-hook
+            (defun bb/evil-mc-anzu ()
+              (add-hook 'evil-mc-after-cursors-deleted 'bb/clear-anzu)))
 
   ;; Diminish
   (spacemacs|diminish hybrid-mode)
