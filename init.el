@@ -408,7 +408,8 @@
 
   ;; Evil MC
   (defun bb/clear-anzu () (setq anzu--state nil))
-  (add-hook 'after-change-major-mode-hook 'turn-on-evil-mc-mode)
+  (add-hook 'prog-mode-hook 'turn-on-evil-mc-mode)
+  (add-hook 'text-mode-hook 'turn-on-evil-mc-mode)
   (add-hook 'evil-mc-mode-hook
             (defun bb/evil-mc-anzu ()
               (add-hook 'evil-mc-after-cursors-deleted 'bb/clear-anzu)))
