@@ -400,6 +400,7 @@
   (add-hook 'makefile-mode-hook 'whitespace-mode)
   (add-hook 'prog-mode-hook 'page-break-lines-mode)
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
+  (evil-mc-mode 1)
 
   (defun bb/comments ()
     (setq-local comment-start "// ")
