@@ -374,6 +374,7 @@
   (spacemacs/set-leader-keys
     "ee" 'evil-edit
     "os" 'just-one-space
+    "ot" 'helm-top
     "qw" (defun bb/maybe-quit ()
            (interactive)
            (if (cdr (visible-frame-list))
