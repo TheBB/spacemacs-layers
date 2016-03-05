@@ -304,6 +304,7 @@
        :inherit font-lock-comment-face :foreground nil)
 
       ;; Modeline
+      (header-line :box (:color "#666666" :line-width 1 :style released-button))
       (mode-line :box (:color "#999999" :line-width 1 :style released-button))
       (powerline-active1 :box (:color "#999999" :line-width 1 :style released-button)
                          :background "#5a5a5a")
@@ -430,10 +431,6 @@
   ;; Disable smartparens highlighting
   (with-eval-after-load 'smartparens
     (show-smartparens-global-mode -1))
-
-  ;; Semantic fucks up scrolling
-  (with-eval-after-load 'semantic
-    (setq semantic-submode-list (delq 'global-semantic-stickyfunc-mode semantic-submode-list)))
 
   ;; Some fixes for comint-style buffers
   (dolist (mode '(comint-mode
