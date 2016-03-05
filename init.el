@@ -443,13 +443,6 @@
                   inferior-emacs-lisp-mode))
     (evil-set-initial-state mode 'normal))
 
-  (let ((comint-hooks '(eshell-mode-hook
-                        term-mode-hook
-                        messages-buffer-mode-hook
-                        comint-mode-hook)))
-    (spacemacs/add-to-hooks (defun bb/no-hl-line-mode ()
-                       (setq-local global-hl-line-mode nil))
-                     comint-hooks))
   (add-hook 'inferior-emacs-lisp-mode-hook 'smartparens-mode)
 
   ;; IRC
