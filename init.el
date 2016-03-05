@@ -85,6 +85,7 @@
 
    dotspacemacs-excluded-packages
    `(clj-refactor
+     clojure-snippets
      elfeed-org
      julia-mode
      magit-gh-pulls
