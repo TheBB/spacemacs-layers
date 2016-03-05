@@ -85,7 +85,6 @@
 
    dotspacemacs-excluded-packages
    `(clj-refactor
-     clojure-snippets
      elfeed-org
      julia-mode
      vi-tilde-fringe
