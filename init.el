@@ -88,7 +88,6 @@
      clojure-snippets
      elfeed-org
      julia-mode
-     magit-gh-pulls
      vi-tilde-fringe
      ,@(when (string= system-type "windows-nt")
          '(evil-mc)))))
@@ -185,6 +184,7 @@
 
    ;; Magit
    magit-popup-show-common-commands nil
+   magit-gh-pulls-pull-detail-limit 50
 
    ;; Flycheck
    flycheck-check-syntax-automatically '(save mode-enabled)
