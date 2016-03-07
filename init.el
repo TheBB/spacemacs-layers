@@ -80,8 +80,7 @@
 
      ,@(unless (string= system-type "windows-nt")
          '(powerline
-           (spaceline :location "~/repos/spaceline/")
-           (unicode-fonts :excluded t))))
+           (spaceline :location "~/repos/spaceline/"))))
 
    dotspacemacs-excluded-packages
    `(clj-refactor
@@ -482,19 +481,10 @@
         :on (nameless-mode)
         :off (nameless-mode -1)
         :evil-leader-for-mode (emacs-lisp-mode . "o:"))))
-  (when (configuration-layer/package-usedp 'unicode-fonts)
-    (use-package unicode-fonts
-      :config
-      (unicode-fonts-setup)))
   (use-package warnings
     :defer t
     :config
     (push '(undo discard-info) warning-suppress-types))
-
-  ;; Workarounds
-
-  ;; https://github.com/syl20bnr/spacemacs/issues/5261
-  ;; (add-hook 'evil-insert-state-exit-hook 'indent-according-to-mode)
 
   ;; Load local
   (when (file-exists-p "~/local.el")
