@@ -32,6 +32,7 @@
      haskell
      html
      (ibuffer :variables ibuffer-group-buffers-by nil)
+     ipython-notebook
      javascript
      latex
      markdown
