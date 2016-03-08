@@ -69,8 +69,9 @@
      bb-c-styles
      bb-erc
      bb-ibuffer
+     bb-git
      bb-latex
-     bb-git)
+     bb-web)
 
    dotspacemacs-additional-packages
    '(helm-flycheck
