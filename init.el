@@ -490,3 +490,17 @@
   ;; Load local
   (when (file-exists-p "~/local.el")
     (load "~/local.el")))
+
+(defmacro bb|wrap-func (func)
+  (let ((advice-name (intern (format "%s--advice" func)))
+        (target-name (intern (format "%s/%s" func system-name))))
+    `(progn
+       (defun ,advice-name (&rest args)
+         (when (fboundp ',target-name)
+           (apply ',target-name args)))
+       (advice-add ',func :after ',advice-name))))
+
+(bb|wrap-func dotspacemacs/layers)
+(bb|wrap-func dotspacemacs/init)
+(bb|wrap-func dotspacemacs/user-init)
+(bb|wrap-func dotspacemacs/user-config)
