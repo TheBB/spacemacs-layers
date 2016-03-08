@@ -6,7 +6,7 @@
    dotspacemacs-distribution 'spacemacs
 
    dotspacemacs-configuration-layers
-   `((auto-completion
+   '((auto-completion
       :variables
       auto-completion-return-key-behavior nil
       auto-completion-tab-key-behavior 'cycle
@@ -16,6 +16,7 @@
      clojure
      command-log
      csharp
+     dash
      django
      elixir
      elfeed
@@ -26,9 +27,11 @@
      (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
      extra-langs
      eyebrowse
+     fasd
      games
      git
      github
+     gtags
      haskell
      html
      (ibuffer :variables ibuffer-group-buffers-by nil)
@@ -45,6 +48,8 @@
      semantic
      (shell :variables shell-default-shell 'eshell)
      shell-scripts
+     (spell-checking :variables spell-checking-enable-by-default nil)
+     spotify
      (syntax-checking :variables syntax-checking-enable-by-default nil)
      (theming :variables
               theming-headings-inherit-from-default 'all
@@ -54,13 +59,6 @@
      (version-control :variables version-control-diff-tool 'diff-hl)
      vimscript
      yaml
-
-     ,@(unless (string= system-type "windows-nt")
-         '(dash
-           fasd
-           gtags
-           (spell-checking :variables spell-checking-enable-by-default nil)
-           spotify))
 
      ;; Non-contrib layers
      encoding
@@ -75,21 +73,23 @@
      bb-git)
 
    dotspacemacs-additional-packages
-   `(helm-flycheck
+   '(helm-flycheck
      nameless
      nginx-mode
-
-     ,@(unless (string= system-type "windows-nt")
-         '(powerline
-           (spaceline :location "~/repos/spaceline/"))))
+     powerline
+     (spaceline :location "~/repos/spaceline/"))
 
    dotspacemacs-excluded-packages
-   `(clj-refactor
+   '(clj-refactor
      elfeed-org
      julia-mode
-     vi-tilde-fringe
-     ,@(when (string= system-type "windows-nt")
-         '(evil-mc)))))
+     vi-tilde-fringe)))
+
+(defun dotspacemacs/layers/SINTEFPC6985 ()
+  (bb/remove-elts-or-cars 'dotspacemacs-configuration-layers
+    '(dash fasd gtags spell-checking spotify))
+  (bb/remove-elts-or-cars 'dotspacemacs-additional-packages
+    '(powerline spaceline)))
 
 (defun dotspacemacs/init ()
   (setq-default
@@ -335,12 +335,6 @@
 
 (defun dotspacemacs/user-config ()
 
-  ;; Utility functions
-  (defun bb/define-key (keymap &rest bindings)
-    (declare (indent 1))
-    (while bindings
-      (define-key keymap (pop bindings) (pop bindings))))
-
   ;; Settings
   (setq-default
    tab-width 8
@@ -490,6 +484,20 @@
   ;; Load local
   (when (file-exists-p "~/local.el")
     (load "~/local.el")))
+
+(defun bb/define-key (keymap &rest bindings)
+  (declare (indent 1))
+  (while bindings
+    (define-key keymap (pop bindings) (pop bindings))))
+
+(defun bb/remove-in-place (var pred)
+  (set var (remove-if pred (symbol-value var))))
+
+(defun bb/remove-elts-or-cars (var elts)
+  (declare (indent 1))
+  (bb/remove-in-place var (lambda (e)
+                            (or (memq e elts)
+                                (and (listp e) (memq (car e) elts))))))
 
 (defmacro bb|wrap-func (func)
   (let ((advice-name (intern (format "%s--advice" func)))
