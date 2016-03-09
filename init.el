@@ -222,6 +222,7 @@
      ("dsm" . "dotspacemacs")
      ("cfl" . "configuration-layer")
      ("sl" . "spaceline")
+     ("et" . "evil-targets")
      ("eip" . "evil-indent-plus"))
    nameless-discover-current-name nil
    nameless-prefix ""
