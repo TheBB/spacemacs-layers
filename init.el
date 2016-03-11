@@ -410,6 +410,11 @@
             (defun bb/evil-mc-anzu ()
               (add-hook 'evil-mc-after-cursors-deleted 'bb/clear-anzu)))
 
+  ;; Semantic
+  (with-eval-after-load 'semantic
+    (setq semantic-default-submodes
+          (remove 'global-semantic-stickyfunc-mode semantic-default-submodes)))
+
   ;; Diminish
   (spacemacs|diminish hybrid-mode)
   (spacemacs|diminish which-key-mode)
