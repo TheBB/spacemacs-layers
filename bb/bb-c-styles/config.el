@@ -32,3 +32,5 @@
 (dolist (mode '(c-mode c++-mode))
   (spacemacs/set-leader-keys-for-major-mode mode
     "os" 'c-set-style))
+
+(spacemacs/add-to-hooks 'bb/c-comments '(c-mode-common-hook))

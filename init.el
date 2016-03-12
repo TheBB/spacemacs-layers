@@ -397,11 +397,6 @@
   (add-hook 'prog-mode-hook 'page-break-lines-mode)
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
-  (defun bb/comments ()
-    (setq-local comment-start "// ")
-    (setq-local comment-end ""))
-  (spacemacs/add-to-hooks 'bb/comments '(c-mode-common-hook))
-
   ;; Evil MC
   (defun bb/clear-anzu () (setq anzu--state nil))
   (add-hook 'prog-mode-hook 'turn-on-evil-mc-mode)
