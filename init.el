@@ -66,6 +66,7 @@
      bb-erc
      bb-ibuffer
      bb-git
+     bb-keys
      bb-latex
      bb-theming
      bb-web)
@@ -257,44 +258,6 @@
   (with-eval-after-load 'projectile
     (push '("C" "h") projectile-other-file-alist))
 
-  ;; Keybindings
-  (bb/define-key evil-normal-state-map
-    "+" 'spacemacs/evil-numbers-transient-state/evil-numbers/inc-at-pt
-    "_" 'spacemacs/evil-numbers-transient-state/evil-numbers/dec-at-pt
-    "\\" 'evil-repeat-find-char-reverse
-    "[s" (lambda (n) (interactive "p") (dotimes (c n nil) (insert " ")))
-    "]s" (lambda (n) (interactive "p")
-           (forward-char) (dotimes (c n nil) (insert " ")) (backward-char (1+ n))))
-  (bb/define-key evil-insert-state-map
-    (kbd "M-SPC") 'hippie-expand
-    (kbd "C-e") 'move-end-of-line
-    (kbd "C-a") 'back-to-indentation)
-  (with-eval-after-load 'helm
-    (bb/define-key helm-map
-      (kbd "C-S-q") 'ace-jump-helm-line-execute-action))
-  (spacemacs/set-leader-keys
-    "ee" 'evil-edit
-    "ot" 'helm-top
-    "qw" (defun bb/maybe-quit ()
-           (interactive)
-           (if (cdr (visible-frame-list))
-               (call-interactively 'spacemacs/frame-killer)
-             (call-interactively 'spacemacs/prompt-kill-emacs)))
-    "qf" (defun bb/save-delete-quit ()
-           (interactive)
-           (spacemacs/write-file)
-           (kill-this-buffer)
-           (bb/maybe-quit))
-    "," 'avy-goto-char
-    "." 'avy-goto-char-2)
-  (spacemacs/set-leader-keys-for-major-mode 'text-mode
-    "." (defun bb/empty-commit ()
-          (interactive)
-          (insert ".")
-          (call-interactively 'with-editor-finish)))
-  (bb/define-key company-active-map
-    (kbd "C-w") 'evil-delete-backward-word)
-
   ;; Miscellaneous
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'makefile-mode-hook 'whitespace-mode)
@@ -350,10 +313,6 @@
     (erc :server "irc.freenode.net" :port "6667" :nick "TheBB" :full-name bb/full-name))
 
   ;; Evilification
-  (with-eval-after-load 'magit
-    (evil-define-key 'normal magit-mode-map (kbd "ESC") nil)
-    (evil-define-key 'normal magit-mode-map (kbd "M-j") 'magit-section-forward-sibling)
-    (evil-define-key 'normal magit-mode-map (kbd "M-k") 'magit-section-backward-sibling))
   (with-eval-after-load 'haskell-interactive-mode
     (evilified-state-evilify-map haskell-error-mode-map
       :mode haskell-error-mode))
@@ -390,11 +349,6 @@
   ;; Load local
   (when (file-exists-p "~/local.el")
     (load "~/local.el")))
-
-(defun bb/define-key (keymap &rest bindings)
-  (declare (indent 1))
-  (while bindings
-    (define-key keymap (pop bindings) (pop bindings))))
 
 (defun bb/remove-in-place (var pred)
   (set var (remove-if pred (symbol-value var))))
