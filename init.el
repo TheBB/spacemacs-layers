@@ -66,7 +66,7 @@
      no-dots
 
      ;; Personal config layers
-     bb-c-styles
+     bb-c
      bb-erc
      bb-ibuffer
      bb-git
