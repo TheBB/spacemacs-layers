@@ -36,8 +36,7 @@
     (flycheck-fringe-info :background nil)
 
     ;; Other
-    (company-tooltip-annotation
-     :foreground "#ff9eb8" :background "#49483e")
+    (company-tooltip-annotation :foreground "#ff9eb8")
     (company-tooltip-annotation-selection :background "#66d9ef")
     (erc-timestamp-face
      :inherit font-lock-comment-face :foreground nil)
