@@ -30,8 +30,8 @@
     "+" 'spacemacs/evil-numbers-transient-state/evil-numbers/inc-at-pt
     "_" 'spacemacs/evil-numbers-transient-state/evil-numbers/dec-at-pt)
   (bb/define-key evil-insert-state-map
-    "C-e" 'move-end-of-line
-    "C-a" 'back-to-indentation)
+    (kbd "C-e") 'move-end-of-line
+    (kbd "C-a") 'back-to-indentation)
   (spacemacs/set-leader-keys
     "ee" 'evil-edit))
 
