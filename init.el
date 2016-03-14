@@ -120,7 +120,6 @@
    dotspacemacs-auto-resume-layouts nil
    dotspacemacs-auto-save-file-location 'cache
    dotspacemacs-max-rollback-slots 10
-   dotspacemacs-use-ido nil
    dotspacemacs-helm-resize t
    dotspacemacs-helm-no-header t
    dotspacemacs-helm-position 'bottom
