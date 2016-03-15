@@ -68,6 +68,7 @@
      bb-git
      bb-keys
      bb-latex
+     bb-org
      bb-theming
      bb-web)
 
