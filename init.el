@@ -73,7 +73,8 @@
      bb-web)
 
    dotspacemacs-additional-packages
-   '(helm-flycheck
+   '(cuda-mode
+     helm-flycheck
      nameless
      nginx-mode
      powerline
@@ -324,6 +325,7 @@
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
 
   ;; Additional packages
+  (add-hook 'cuda-mode-hook (lambda () (run-hooks 'prog-mode-hook)))
   (use-package helm-flycheck
     :defer t
     :init
