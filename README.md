@@ -39,3 +39,8 @@ hacks it in, anyway.
 Note that this works regardless of the value of `helm-ff-skip-boring-files` and
 `helm-boring-file-regexp-list`. That functionality will continue to work as
 before.
+
+### operators
+
+Adds some new evil operators. For now, just one: a narrowing operator on
+`SPC n n`.
