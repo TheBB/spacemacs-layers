@@ -42,5 +42,8 @@ before.
 
 ### operators
 
-Adds some new evil operators. For now, just one: a narrowing operator on
-`SPC n n`.
+Adds some new evil operators.
+
+- `SPC n n`: narrow
+- `SPC g g`: public gist
+- `SPC g G`: private gist
