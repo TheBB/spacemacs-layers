@@ -60,6 +60,7 @@
      encoding
      evil-little-word
      no-dots
+     operators
 
      ;; Personal config layers
      bb-c
