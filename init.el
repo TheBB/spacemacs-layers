@@ -32,7 +32,6 @@
      games
      git
      github
-     gtags
      haskell
      html
      (ibuffer :variables ibuffer-group-buffers-by nil)
@@ -90,7 +89,7 @@
 
 (defun dotspacemacs/layers/SINTEFPC6985 ()
   (bb/remove-elts-or-cars 'dotspacemacs-configuration-layers
-    '(dash fasd gtags spell-checking spotify))
+    '(dash fasd spell-checking spotify))
   (bb/remove-elts-or-cars 'dotspacemacs-additional-packages
     '(powerline spaceline)))
 
@@ -109,7 +108,7 @@
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font
    `("Source Code Pro"
-     :size ,(if (string= system-type "windows-nt") 16 13)
+     :size ,(if (spacemacs/system-is-mswindows) 16 13)
      :weight demibold :width normal :powerline-scale 1.15)
    dotspacemacs-leader-key "SPC"
    dotspacemacs-emacs-leader-key "M-m"
@@ -290,9 +289,6 @@
     (diminish 'racer-mode))
   (with-eval-after-load 'command-log-mode
     (diminish 'command-log-mode))
-  (unless (spacemacs/system-is-mswindows)
-    (with-eval-after-load 'helm-gtags
-      (diminish 'helm-gtags-mode)))
 
   ;; Disable smartparens highlighting
   (with-eval-after-load 'smartparens
