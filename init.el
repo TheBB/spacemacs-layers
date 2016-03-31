@@ -1,9 +1,11 @@
 (defun dotspacemacs/layers ()
   (setq-default
 
+   dotspacemacs-distribution 'spacemacs
+   dotspacemacs-enable-lazy-installation nil
+   dotspacemacs-ask-for-lazy-installation nil
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/")
    dotspacemacs-delete-orphan-packages t
-   dotspacemacs-distribution 'spacemacs
 
    dotspacemacs-configuration-layers
    '((auto-completion
@@ -26,7 +28,6 @@
      ess
      (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
      extra-langs
-     eyebrowse
      fasd
      games
      git
