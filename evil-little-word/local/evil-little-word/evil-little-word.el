@@ -24,6 +24,8 @@
 
 ;;; Code:
 
+(require 'evil)
+
 (defun maybe-define-category (cat doc &optional table)
   (unless (category-docstring cat table) (define-category cat doc table)))
 
@@ -112,3 +114,5 @@ list of categories."
 (evil-define-text-object evil-inner-little-word (count &optional beg end type)
   "Select inner little word."
   (evil-select-inner-object 'evil-little-word beg end type count))
+
+(provide 'evil-little-word)
