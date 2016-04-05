@@ -346,9 +346,6 @@
     :config
     (push '(undo discard-info) warning-suppress-types))
 
-  ;; Workaround for dired binding
-  (spacemacs/set-leader-keys "ad" 'deer)
-
   ;; Load local
   (when (file-exists-p "~/local.el")
     (load "~/local.el")))
