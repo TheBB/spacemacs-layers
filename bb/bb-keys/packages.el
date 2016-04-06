@@ -20,6 +20,7 @@
     "." 'evil-avy-goto-char-2))
 
 (defun bb-keys/post-init-company ()
+  (bb/define-key evil-insert-state-map (kbd "C-l") 'company-complete)
   (with-eval-after-load 'company
     (bb/define-key company-active-map
       (kbd "C-w") 'evil-delete-backward-word
@@ -46,7 +47,7 @@
 
 (defun bb-keys/post-init-hippie-exp ()
   (bb/define-key evil-insert-state-map
-    (kbd "M-SPC") 'hippie-expand))
+    (kbd "C-SPC") 'hippie-expand))
 
 (defun bb-keys/post-init-magit ()
   (with-eval-after-load 'magit
