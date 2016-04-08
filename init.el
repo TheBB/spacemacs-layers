@@ -236,6 +236,10 @@
      "http://xkcd.com/rss.xml")
 
    ;; IRC
+   erc-server-list
+   `(("irc.gitter.im" :port "6667" :nick "TheBB" :full-name ,bb/full-name
+      :ssl t :password ,bb/gitter-pwd)
+     ("irc.freenode.net" :port "6667" :nick "TheBB" :full-name ,bb/full-name))
    erc-autojoin-channels-alist
    '(("1\\.0\\.0" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel") ; Gitter
      ("irc.gitter.im" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel")
@@ -299,14 +303,6 @@
   (evil-define-key 'emacs term-raw-map (kbd "C-c") 'term-send-raw)
 
   (add-hook 'inferior-emacs-lisp-mode-hook 'smartparens-mode)
-
-  ;; IRC
-  (spacemacs|define-custom-layout "@ERC"
-    :binding "E"
-    :body
-    (erc-tls :server "irc.gitter.im" :port "6667" :nick "TheBB"
-             :password bb/gitter-pwd :full-name bb/full-name)
-    (erc :server "irc.freenode.net" :port "6667" :nick "TheBB" :full-name bb/full-name))
 
   ;; Evilification
   (with-eval-after-load 'haskell-interactive-mode
