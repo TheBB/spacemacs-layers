@@ -294,12 +294,10 @@
   (with-eval-after-load 'smartparens
     (show-smartparens-global-mode -1))
 
-  ;; Some fixes for comint-style buffers
-  (dolist (mode '(comint-mode
-                  term-mode
-                  eshell-mode
-                  inferior-emacs-lisp-mode))
-    (evil-set-initial-state mode 'normal))
+  ;; Thanks StreakyCobra
+  (evil-set-initial-state 'term-mode 'emacs)
+  (push 'term-mode evil-escape-excluded-major-modes)
+  (evil-define-key 'emacs term-raw-map (kbd "C-c") 'term-send-raw)
 
   (add-hook 'inferior-emacs-lisp-mode-hook 'smartparens-mode)
 
