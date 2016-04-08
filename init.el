@@ -341,11 +341,7 @@
   (use-package warnings
     :defer t
     :config
-    (push '(undo discard-info) warning-suppress-types))
-
-  ;; Load local
-  (when (file-exists-p "~/local.el")
-    (load "~/local.el")))
+    (push '(undo discard-info) warning-suppress-types)))
 
 (defun bb/remove-in-place (var pred)
   (set var (remove-if pred (symbol-value var))))
@@ -369,3 +365,6 @@
 (bb|wrap-func dotspacemacs/init)
 (bb|wrap-func dotspacemacs/user-init)
 (bb|wrap-func dotspacemacs/user-config)
+
+(when (file-exists-p "~/local.el")
+  (load "~/local.el"))
