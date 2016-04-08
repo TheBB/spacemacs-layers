@@ -85,7 +85,6 @@
    '(clj-refactor
      elfeed-org
      julia-mode
-     org-agenda                         ; workaround for #5714
      vi-tilde-fringe)))
 
 (defun dotspacemacs/layers/SINTEFPC6985 ()
