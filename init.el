@@ -61,7 +61,6 @@
      evil-little-word
      no-dots
      operators
-     ;; screaming-modeline
 
      ;; Personal config layers
      bb-c
