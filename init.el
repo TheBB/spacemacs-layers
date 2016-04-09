@@ -61,6 +61,7 @@
      evil-little-word
      no-dots
      operators
+     ;; screaming-modeline
 
      ;; Personal config layers
      bb-c
@@ -252,7 +253,7 @@
    tab-width 8
    evil-move-beyond-eol nil
    helm-echo-input-in-header-line nil
-   powerline-default-separator 'alternate)
+   powerline-default-separator 'arrow)
 
   (dolist (e '(("xml" . web-mode)
                ("xinp" . web-mode)
