@@ -1,17 +1,18 @@
 (defface scml-normal-1
-  `((t (:background "OliveDrab2"
+  `((t (:background "chartreuse1"
         :foreground "#3E3D31"
         :inerit 'mode-line)))
   "")
 (defface scml-normal-2
-  `((t (:background "OliveDrab3"
+  `((t (:background "chartreuse4"
         :foreground "#3E3D31"
         :inerit 'mode-line)))
   "")
-
-(set-face-attribute 'mode-line-buffer-id nil :foreground "#3E3D31")
-(set-face-attribute 'scml-normal-1 nil :background "OliveDrab4")
-(set-face-attribute 'scml-normal-2 nil :background "OliveDrab3")
+(defface scml-normal-l
+  `((t (:background "#223200"
+        :foreground "#3E3D31"
+        :inerit 'mode-line)))
+  "")
 
 (defun scml-face-func (face active)
   (let ((state (if active evil-state 'inactive))
@@ -19,6 +20,7 @@
     (pcase (list state tface)
       (`(normal face1) 'scml-normal-1)
       (`(normal face2) 'scml-normal-2)
+      (`(normal line) 'scml-normal-l)
       (_ (cond
           ((eq 'face1 face) (if active 'powerline-active1 'powerline-inactive1))
           ((eq 'face2 face) (if active 'mode-line 'mode-line-inactive))
@@ -27,5 +29,3 @@
                                     (funcall spaceline-highlight-face-func)
                                   'powerline-inactive1))))
       )))
-
-(powerline-reset)
