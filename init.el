@@ -75,6 +75,7 @@
 
    dotspacemacs-additional-packages
    '(cuda-mode
+     defproject
      helm-flycheck
      nameless
      nginx-mode
@@ -335,7 +336,15 @@
   (use-package warnings
     :defer t
     :config
-    (push '(undo discard-info) warning-suppress-types)))
+    (push '(undo discard-info) warning-suppress-types))
+  (use-package defproject
+    :commands defproject))
+
+(defun dotspacemacs/user-config/eivindf-sintef ()
+  (defproject IFEM-PoroElasticity
+    :path "~/work/IFEM/Apps/PoroElasticity"
+    :nil
+    ((helm-make-build-dir . "bld-sd"))))
 
 (defun bb/remove-in-place (var pred)
   (set var (remove-if pred (symbol-value var))))
