@@ -14,6 +14,7 @@
   (autoload 'evil-avy-goto-char-timer "evil-integration" nil 'interactive)
   (autoload 'evil-avy-goto-char "evil-integration" nil 'interactive)
   (autoload 'evil-avy-goto-char-2 "evil-integration" nil 'interactive)
+  (bb/define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
   (spacemacs/set-leader-keys
     "y" 'evil-avy-goto-char-timer
     "," 'evil-avy-goto-char
