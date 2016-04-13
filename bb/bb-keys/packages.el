@@ -10,11 +10,12 @@
 
 (defun bb-keys/post-init-avy ()
   (with-eval-after-load 'evil-integration
-    (evil-define-avy-motion avy-goto-char-timer inclusive))
-  (autoload 'evil-avy-goto-char-timer "evil-integration" nil 'interactive)
-  (autoload 'evil-avy-goto-char "evil-integration" nil 'interactive)
-  (autoload 'evil-avy-goto-char-2 "evil-integration" nil 'interactive)
-  (bb/define-key isearch-mode-map (kbd "C-'") 'avy-isearch)
+    (evil-define-avy-motion avy-goto-char-timer inclusive)
+    (evil-define-avy-motion avy-isearch inclusive))
+  (dolist (c '(goto-char-timer goto-char goto-char-2 isearch))
+    (autoload (intern (format "evil-avy-%s" c))
+      "evil-integration" nil 'interactive))
+  (bb/define-key isearch-mode-map (kbd "C-'") 'evil-avy-isearch)
   (spacemacs/set-leader-keys
     "y" 'evil-avy-goto-char-timer
     "," 'evil-avy-goto-char
