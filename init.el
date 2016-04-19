@@ -186,9 +186,6 @@
    magit-popup-show-common-commands nil
    magit-gh-pulls-pull-detail-limit 200
 
-   ;; Evil-magit
-   evil-magit-use-y-for-yank nil
-
    ;; Flycheck
    flycheck-check-syntax-automatically '(save mode-enabled)
 
