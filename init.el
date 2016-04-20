@@ -274,7 +274,7 @@
   (add-hook 'prog-mode-hook 'turn-on-evil-mc-mode)
   (add-hook 'text-mode-hook 'turn-on-evil-mc-mode)
   (add-hook 'evil-mc-after-cursors-deleted
-            (defun bb/clear-anzu () (setq anzu--state nil)))
+            (defun bb/clear-anzu () (interactive) (setq anzu--state nil)))
 
   ;; Semantic
   (with-eval-after-load 'semantic
