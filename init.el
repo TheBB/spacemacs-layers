@@ -313,6 +313,10 @@
     (evilified-state-evilify-map proced-mode-map
       :mode proced-mode))
 
+  ;; Experimenting with transparency
+  (push '(alpha . (0.85 . 0.85)) default-frame-alist)
+  (set-frame-parameter (selected-frame) 'alpha '(0.85 . 0.85))
+
   ;; Safe local variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
 
