@@ -314,8 +314,8 @@
       :mode proced-mode))
 
   ;; Experimenting with transparency
-  (push '(alpha . (0.85 . 0.85)) default-frame-alist)
-  (set-frame-parameter (selected-frame) 'alpha '(0.85 . 0.85))
+  (push '(alpha . (0.94 . 0.94)) default-frame-alist)
+  (set-frame-parameter (selected-frame) 'alpha '(0.94 . 0.94))
 
   ;; Safe local variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
