@@ -258,7 +258,9 @@
   (dolist (e '(("xml" . web-mode)
                ("xinp" . web-mode)
                ("C" . c++-mode)
-               ("h" . c++-mode)))
+               ("h" . c++-mode)
+               ("service" . conf-mode)
+               ("timer" . conf-mode)))
     (push (cons (concat "\\." (car e) "\\'") (cdr e)) auto-mode-alist))
   (push '("PKGBUILD" . shell-script-mode) auto-mode-alist)
   (with-eval-after-load 'projectile
