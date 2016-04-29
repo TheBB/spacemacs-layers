@@ -6,7 +6,7 @@
     (font-lock-string-face :slant italic)
     (font-lock-doc-face :slant italic)
     (font-lock-keyword-face :weight bold)
-    (font-lock-builtin-face :foreground "#ff9eb8")
+    (font-lock-builtin-face :foreground "#ff9eb8" :weight semi-bold)
     (font-lock-warning-face :underline nil)
     (web-mode-html-attr-value-face
      :inherit font-lock-string-face :foreground nil)
