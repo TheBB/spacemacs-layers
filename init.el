@@ -38,6 +38,7 @@
      ipython-notebook
      javascript
      latex
+     lua
      markdown
      org
      (python :variables python-test-runner 'pytest)
@@ -262,7 +263,9 @@
                ("service" . conf-mode)
                ("timer" . conf-mode)))
     (push (cons (concat "\\." (car e) "\\'") (cdr e)) auto-mode-alist))
-  (push '("PKGBUILD" . shell-script-mode) auto-mode-alist)
+  (dolist (e '(("PKGBUILD" . shell-script-mode)
+               ("conky.conf" . lua-mode)))
+    (push e auto-mode-alist))
   (with-eval-after-load 'projectile
     (push '("C" "h") projectile-other-file-alist))
 
