@@ -77,6 +77,7 @@
    dotspacemacs-additional-packages
    '(cuda-mode
      defproject
+     editorconfig
      helm-flycheck
      nameless
      nginx-mode
@@ -347,6 +348,8 @@
     :defer t
     :config
     (push '(undo discard-info) warning-suppress-types))
+  (use-package editorconfig
+    :config (editorconfig-mode 1))
   (use-package defproject
     :commands defproject))
 
