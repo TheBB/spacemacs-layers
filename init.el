@@ -317,7 +317,7 @@
       :mode proced-mode))
 
   ;; Experimenting with transparency
-  (let ((tp (cons dotspacemacs-active-transparency dotspacemacs-active-transparency)))
+  (let ((tp (cons dotspacemacs-active-transparency dotspacemacs-inactive-transparency)))
     (push `(alpha . ,tp) default-frame-alist)
     (set-frame-parameter (selected-frame) 'alpha tp))
 
