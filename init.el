@@ -317,8 +317,9 @@
       :mode proced-mode))
 
   ;; Experimenting with transparency
-  (push '(alpha . (0.94 . 0.94)) default-frame-alist)
-  (set-frame-parameter (selected-frame) 'alpha '(0.94 . 0.94))
+  (let ((tp (cons dotspacemacs-active-transparency dotspacemacs-active-transparency)))
+    (push `(alpha . ,tp) default-frame-alist)
+    (set-frame-parameter (selected-frame) 'alpha tp))
 
   ;; Safe local variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
