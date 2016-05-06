@@ -36,7 +36,7 @@
     (kbd "C-e") 'move-end-of-line
     (kbd "C-a") 'back-to-indentation)
   (spacemacs/set-leader-keys
-    "ee" 'evil-edit))
+    "oe" 'evil-edit))
 
 (defun bb-keys/post-init-evil-unimpaired ()
   (bb/define-key evil-normal-state-map

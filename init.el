@@ -330,7 +330,7 @@
   (use-package helm-flycheck
     :defer t
     :init
-    (spacemacs/set-leader-keys "eh" 'helm-flycheck))
+    (spacemacs/set-leader-keys "ee" 'helm-flycheck))
   (use-package nginx-mode
     :defer t
     :mode ("nginx\\.conf\\'" "/etc/nginx/.*\\'"))
