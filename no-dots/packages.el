@@ -1,5 +1,4 @@
 (setq no-dots-packages '(helm))
-(setq no-dots-excluded-packages '())
 
 (defun no-dots/post-init-helm ()
   (with-eval-after-load 'helm-files
