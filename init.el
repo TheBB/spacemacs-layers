@@ -120,6 +120,7 @@
    dotspacemacs-distinguish-gui-tab t
    dotspacemacs-emacs-command-key "SPC"
    dotspacemacs-remap-Y-to-y$ t
+   dotspacemacs-retain-visual-state-on-shift t
    dotspacemacs-ex-substitute-global t
    dotspacemacs-default-layout-name "Home"
    dotspacemacs-display-default-layout nil
@@ -143,6 +144,7 @@
    dotspacemacs-smooth-scrolling nil
    dotspacemacs-line-numbers nil
    dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smart-closing-parenthesis nil
    dotspacemacs-highlight-delimiters 'all
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
