@@ -260,6 +260,10 @@
    helm-echo-input-in-header-line nil
    powerline-default-separator 'arrow)
 
+  (spaceline-install 'main)
+  (spaceline-install 'helm)
+  (spaceline-install 'info)
+
   (dolist (e '(("xml" . web-mode)
                ("xinp" . web-mode)
                ("C" . c++-mode)
