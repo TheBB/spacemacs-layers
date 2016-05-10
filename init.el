@@ -200,10 +200,6 @@
    ;; Ranger
    ranger-override-dired t
 
-   ;; Spaceline
-   spaceline-buffer-encoding-abbrev-p nil
-   spaceline-version-control-p nil
-
    ;; Matlab
    matlab-auto-fill nil
    matlab-fill-code nil
@@ -257,13 +253,15 @@
   (setq-default
    tab-width 8
    evil-move-beyond-eol nil
-   helm-echo-input-in-header-line nil
-   powerline-default-separator 'arrow)
+   helm-echo-input-in-header-line nil)
 
-  (spaceline-install 'main)
-  (spaceline-install 'helm)
-  (spaceline-install 'info)
+  ;; Spaceline
+  (setq powerline-default-separator 'arrow
+        spaceline-buffer-encoding-abbrev-p nil
+        spaceline-version-control-p nil)
+  (spaceline-compile)
 
+  ;; Filenames
   (dolist (e '(("xml" . web-mode)
                ("xinp" . web-mode)
                ("C" . c++-mode)
