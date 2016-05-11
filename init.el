@@ -80,6 +80,7 @@
      defproject
      editorconfig
      helm-flycheck
+     kivy-mode
      nameless
      nginx-mode
      powerline
@@ -356,6 +357,10 @@
     (push '(undo discard-info) warning-suppress-types))
   (use-package editorconfig
     :config (editorconfig-mode 1))
+  (use-package kivy-mode
+    :defer t
+    :init
+    (push '(kivy-mode . kivy-indent-offset) spacemacs--indent-variable-alist))
   (use-package defproject
     :commands defproject))
 
