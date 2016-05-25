@@ -8,7 +8,8 @@
    dotspacemacs-delete-orphan-packages t
 
    dotspacemacs-configuration-layers
-   '((auto-completion
+   '(asm
+     (auto-completion
       :variables
       auto-completion-return-key-behavior nil
       auto-completion-tab-key-behavior 'cycle
