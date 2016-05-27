@@ -42,6 +42,7 @@
      :inherit font-lock-comment-face :foreground nil)
     (evil-search-highlight-persist-highlight-face
      :background "#fc5fef" :foreground "#000000")
+    (font-latex-verbatim-face :inherit nil)
     (helm-ff-prefix :background nil :foreground "#666666" :weight bold)
     (org-done :foreground "MediumSpringGreen")
     (region :background "#998f84")
