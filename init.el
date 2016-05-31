@@ -350,6 +350,7 @@
         :status nameless-mode
         :on (nameless-mode)
         :off (nameless-mode -1)
+        :documentation "Nameless mode."
         :evil-leader-for-mode (emacs-lisp-mode . "o:"))))
   (use-package warnings
     :defer t
