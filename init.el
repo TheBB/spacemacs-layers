@@ -5,7 +5,7 @@
    dotspacemacs-enable-lazy-installation nil
    dotspacemacs-ask-for-lazy-installation nil
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/")
-   dotspacemacs-delete-orphan-packages t
+   dotspacemacs-download-packages 'used
 
    dotspacemacs-configuration-layers
    '(asm
