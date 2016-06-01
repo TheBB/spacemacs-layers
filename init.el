@@ -22,7 +22,6 @@
      csharp
      dash
      django
-     elixir
      elfeed
      emacs-lisp
      emoji
