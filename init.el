@@ -146,6 +146,7 @@
    dotspacemacs-mode-line-unicode-symbols nil
    dotspacemacs-smooth-scrolling t
    dotspacemacs-line-numbers nil
+   dotspacemacs-folding-method 'origami
    dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-smart-closing-parenthesis nil
    dotspacemacs-highlight-delimiters 'all
