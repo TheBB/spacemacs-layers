@@ -1,3 +1,9 @@
+;;; init.el --- Spacemacs configuration file
+;;
+;; Author: Eivind Fonn
+;;
+;; This file is not part of GNU Emacs.
+
 (defun dotspacemacs/layers ()
   (setq-default
 
