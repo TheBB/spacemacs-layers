@@ -129,6 +129,7 @@
    dotspacemacs-emacs-command-key "SPC"
    dotspacemacs-remap-Y-to-y$ t
    dotspacemacs-retain-visual-state-on-shift t
+   dotspacemacs-visual-line-move-text t
    dotspacemacs-ex-substitute-global t
    dotspacemacs-default-layout-name "Home"
    dotspacemacs-display-default-layout nil
