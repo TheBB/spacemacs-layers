@@ -95,6 +95,7 @@
    dotspacemacs-excluded-packages
    '(clj-refactor
      elfeed-org
+     ido
      julia-mode
      vi-tilde-fringe)))
 
