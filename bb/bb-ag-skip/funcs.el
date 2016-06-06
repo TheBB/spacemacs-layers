@@ -1,11 +1,15 @@
 (defvar-local bb--ag-tracker nil)
 
+(defun bb/helm-ag--action-find-file-before (candidate)
+  (with-current-buffer "*helm-ag*"
+    (setq bb--ag-tracker (point))))
+
 (defmacro bb|ag-skipper (name func)
   `(defun ,name ()
      (interactive)
      (let ((candidate
             (with-current-buffer "*helm-ag*"
-              (when bb--ag-tracker (goto-char bb-ag-tracker))
+              (when bb--ag-tracker (goto-char bb--ag-tracker))
               (,func)
               (let ((str (buffer-substring (point-at-bol) (point-at-eol))))
                 (when (and str (< 0 (length str))
