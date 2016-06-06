@@ -289,6 +289,9 @@
   (add-hook 'text-mode-hook 'typo-mode)
   (add-hook 'makefile-mode-hook 'whitespace-mode)
   (add-hook 'prog-mode-hook 'page-break-lines-mode)
+  (add-hook 'after-make-frame-functions
+            (defun bb/delayed-redraw (frame)
+              (run-with-timer 0.2 nil 'redraw-frame frame)))
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
   ;; Evil MC
