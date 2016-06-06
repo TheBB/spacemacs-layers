@@ -294,6 +294,10 @@
               (run-with-timer 0.2 nil 'redraw-frame frame)))
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
+  ;; Override diff-hl terminal settings in daemon mode
+  (setq diff-hl-side 'right)
+  (diff-hl-margin-mode -1)
+
   ;; Evil MC
   (add-hook 'prog-mode-hook 'turn-on-evil-mc-mode)
   (add-hook 'text-mode-hook 'turn-on-evil-mc-mode)
