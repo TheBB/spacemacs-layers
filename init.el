@@ -59,6 +59,7 @@
      (spell-checking :variables spell-checking-enable-by-default nil)
      spotify
      (syntax-checking :variables syntax-checking-enable-by-default nil)
+     systemd
      typography
      (version-control :variables version-control-diff-tool 'diff-hl)
      vimscript
@@ -274,9 +275,7 @@
   (dolist (e '(("xml" . web-mode)
                ("xinp" . web-mode)
                ("C" . c++-mode)
-               ("h" . c++-mode)
-               ("service" . conf-mode)
-               ("timer" . conf-mode)))
+               ("h" . c++-mode)))
     (push (cons (concat "\\." (car e) "\\'") (cdr e)) auto-mode-alist))
   (dolist (e '(("PKGBUILD" . shell-script-mode)
                ("conky.conf" . lua-mode)))
