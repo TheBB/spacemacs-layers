@@ -71,7 +71,6 @@
      operators
 
      ;; Personal config layers
-     bb-ag-skip
      bb-c
      bb-erc
      bb-ibuffer
