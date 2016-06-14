@@ -90,6 +90,7 @@
      kivy-mode
      nameless
      nginx-mode
+     org-projectile
      powerline
      (spaceline :location "~/repos/spaceline/"))
 
