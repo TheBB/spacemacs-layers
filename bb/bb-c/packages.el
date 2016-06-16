@@ -37,5 +37,5 @@
                       (inline-open . 0)
                       (statement-cont . c-lineup-assignments)
                       (inextern-lang . 0)
-                      (innamespace . 0))))
+                      (innamespace . +))))
       (push '(other . "bb") c-default-style))))
