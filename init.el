@@ -310,6 +310,7 @@
           (remove 'global-semantic-stickyfunc-mode semantic-default-submodes)))
 
   ;; Diminish
+  (spacemacs|diminish holy-mode)
   (spacemacs|diminish hybrid-mode)
   (spacemacs|diminish which-key-mode)
   (spacemacs|diminish evil-mc-mode)
