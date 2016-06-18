@@ -1,8 +1,13 @@
 (defun bb/web-post-command ()
-  (when (looking-back "\" >")
+  (cond
+   ((and (looking-back "/")
+         (looking-at "</"))
+    (delete-char -1)
+    (re-search-forward ">"))
+   ((looking-back "\" >")
     (backward-char 2)
     (delete-char 1)
-    (forward-char 1)))
+    (forward-char 1))))
 
 (define-minor-mode bb-auto-tags-close-mode
   "Minor mode for closing tags properly in web-mode."
