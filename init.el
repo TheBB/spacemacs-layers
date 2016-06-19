@@ -175,6 +175,7 @@
    system-time-locale "C"
    paradox-github-token t
    open-junk-file-find-file-function 'find-file
+   spacemacs-show-trailing-whitespace nil
 
    ;; Backups
    backup-directory-alist `((".*" . ,temporary-file-directory))
@@ -292,7 +293,6 @@
   (add-hook 'after-make-frame-functions
             (defun bb/delayed-redraw (frame)
               (run-with-timer 0.2 nil 'redraw-frame frame)))
-  (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
 
   ;; Override diff-hl terminal settings in daemon mode
   (setq diff-hl-side 'right)
