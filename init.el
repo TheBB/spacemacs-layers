@@ -99,7 +99,9 @@
      elfeed-org
      ido
      julia-mode
-     vi-tilde-fringe)))
+     vi-tilde-fringe)
+
+   dotspacemacs-frozen-packages '()))
 
 (defun dotspacemacs/layers/SINTEFPC6985 ()
   (bb/remove-elts-or-cars 'dotspacemacs-configuration-layers
