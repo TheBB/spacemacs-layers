@@ -39,6 +39,7 @@
      games
      git
      github
+     gtags
      haskell
      html
      (ibuffer :variables ibuffer-group-buffers-by nil)
@@ -316,6 +317,7 @@
   (spacemacs|diminish hybrid-mode)
   (spacemacs|diminish which-key-mode)
   (spacemacs|diminish evil-mc-mode)
+  (spacemacs|diminish helm-gtags-mode)
   (with-eval-after-load 'emoji-cheat-sheet-plus
     (diminish 'emoji-cheat-sheet-plus-display-mode))
   (with-eval-after-load 'racer
