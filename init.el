@@ -349,6 +349,13 @@
     (push `(alpha . ,tp) default-frame-alist)
     (set-frame-parameter (selected-frame) 'alpha tp))
 
+  ;; Space-doc
+  (with-eval-after-load 'space-doc
+    (remove-hook 'spacemacs-space-doc-modificators
+                 'spacemacs//space-doc-center-buffer-mode)
+    (remove-hook 'spacemacs-space-doc-modificators
+                 'spacemacs//space-doc-view-mode))
+
   ;; Safe local variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
 
