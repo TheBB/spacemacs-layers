@@ -49,6 +49,7 @@
      lua
      markdown
      org
+     php
      (python :variables python-test-runner 'pytest)
      ranger
      react
@@ -106,7 +107,7 @@
 
 (defun dotspacemacs/layers/SINTEFPC6985 ()
   (bb/remove-elts-or-cars 'dotspacemacs-configuration-layers
-    '(dash fasd spell-checking spotify))
+    '(dash fasd php spell-checking spotify))
   (bb/remove-elts-or-cars 'dotspacemacs-additional-packages
     '(powerline spaceline)))
 
