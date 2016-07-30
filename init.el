@@ -10,7 +10,7 @@
    dotspacemacs-distribution 'spacemacs
    dotspacemacs-enable-lazy-installation nil
    dotspacemacs-ask-for-lazy-installation nil
-   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/")
+   dotspacemacs-configuration-layer-path nil
    dotspacemacs-download-packages 'used
 
    dotspacemacs-configuration-layers
