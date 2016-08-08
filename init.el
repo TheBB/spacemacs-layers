@@ -179,6 +179,7 @@
    system-time-locale "C"
    paradox-github-token t
    open-junk-file-find-file-function 'find-file
+   read-quoted-char-radix 16
 
    ;; Backups
    backup-directory-alist `((".*" . ,temporary-file-directory))
