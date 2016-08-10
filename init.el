@@ -17,6 +17,7 @@
    '(asm
      (auto-completion
       :variables
+      auto-completion-enable-snippets-in-popup t
       auto-completion-return-key-behavior nil
       auto-completion-tab-key-behavior 'cycle
       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
