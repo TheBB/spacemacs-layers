@@ -184,6 +184,9 @@
    open-junk-file-find-file-function 'find-file
    read-quoted-char-radix 16
 
+   ;; Theming
+   monokai-highlight-line "#3A3A3A"
+
    ;; Backups
    backup-directory-alist `((".*" . ,temporary-file-directory))
    auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
