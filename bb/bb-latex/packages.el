@@ -52,6 +52,7 @@
           ("tikz"
            (("foreach" "")
             ("draw" "[")
+            ("fill" "[")
             ("matrix" "[")
             ("node" "["))
            default command))))
