@@ -50,7 +50,6 @@
      lua
      markdown
      org
-     php
      (python :variables python-test-runner 'pytest)
      ranger
      react
