@@ -11,7 +11,7 @@
    dotspacemacs-enable-lazy-installation nil
    dotspacemacs-ask-for-lazy-installation nil
    dotspacemacs-configuration-layer-path nil
-   dotspacemacs-download-packages 'used-but-keep-unused
+   dotspacemacs-install-packages 'used-but-keep-unused
 
    dotspacemacs-configuration-layers
    '(asm
