@@ -196,6 +196,16 @@
    kept-old-versions 2
    make-backup-files nil
 
+   ;; Documentation
+   spacemacs-space-doc-modificators
+   '(org-indent-mode
+     alternative-emphasis
+     alternative-tags-look
+     link-protocol
+     org-block-line-face-remap
+     org-kbd-face-remap
+     resize-inline-images)
+
    ;; Evil
    evil-shift-round nil
 
@@ -357,13 +367,6 @@
   (let ((tp (cons dotspacemacs-active-transparency dotspacemacs-inactive-transparency)))
     (push `(alpha . ,tp) default-frame-alist)
     (set-frame-parameter (selected-frame) 'alpha tp))
-
-  ;; Space-doc
-  (with-eval-after-load 'space-doc
-    (remove-hook 'spacemacs-space-doc-modificators
-                 'spacemacs//space-doc-center-buffer-mode)
-    (remove-hook 'spacemacs-space-doc-modificators
-                 'spacemacs//space-doc-view-mode))
 
   ;; Safe local variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
