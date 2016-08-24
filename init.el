@@ -350,6 +350,7 @@
 
   ;; Thanks StreakyCobra
   (evil-set-initial-state 'term-mode 'emacs)
+  (evil-set-initial-state 'calculator-mode 'emacs)
   (push 'term-mode evil-escape-excluded-major-modes)
   (evil-define-key 'emacs term-raw-map (kbd "C-c") 'term-send-raw)
 
