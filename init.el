@@ -121,7 +121,7 @@
    dotspacemacs-elpa-subdirectory 'emacs-version
    dotspacemacs-editing-style 'vim
    dotspacemacs-startup-banner nil
-   dotspacemacs-startup-lists '(recents bookmarks projects)
+   dotspacemacs-startup-lists '(bookmarks (recents . 10) projects)
    dotspacemacs-startup-recent-list-size 5
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes
