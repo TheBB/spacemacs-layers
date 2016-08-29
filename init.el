@@ -200,10 +200,8 @@
    ;; Documentation
    spacemacs-space-doc-modificators
    '(org-indent-mode
-     alternative-emphasis
      alternative-tags-look
      link-protocol
-     org-block-line-face-remap
      org-kbd-face-remap
      resize-inline-images)
 
