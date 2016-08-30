@@ -52,7 +52,7 @@
      org
      php
      (python :variables python-test-runner 'pytest)
-     ranger
+     (ranger :variables ranger-override-dired t)
      react
      ruby
      rust
@@ -228,9 +228,6 @@
 
    ;; Avy
    avy-all-windows 'all-frames
-
-   ;; Ranger
-   ranger-override-dired t
 
    ;; Matlab
    matlab-auto-fill nil
