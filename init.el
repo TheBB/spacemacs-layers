@@ -21,6 +21,7 @@
       auto-completion-return-key-behavior nil
       auto-completion-tab-key-behavior 'cycle
       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
+      auto-completion-enable-help-tooltip 'manual
       :disabled-for org erc)
      bibtex
      (c-c++ :variables c-c++-enable-clang-support t)
