@@ -123,7 +123,6 @@
    dotspacemacs-editing-style 'vim
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(bookmarks (recents . 10) projects)
-   dotspacemacs-startup-recent-list-size 5
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes
    '(monokai material spacemacs-dark spacemacs-light solarized-dark leuven zenburn)
