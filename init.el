@@ -391,7 +391,23 @@
     :init
     (push '(kivy-mode . kivy-indent-offset) spacemacs--indent-variable-alist))
   (use-package defproject
-    :commands defproject))
+    :commands defproject)
+
+  ;; EBNF grammar
+  (define-generic-mode 'ebnf-mode
+    '("#" ("(*" . "*)"))
+    '()
+    '(("^[^ \t\n][^=]+" . font-lock-variable-name-face)
+      ("['\"].*?['\"]" . font-lock-string-face)
+      ("/.*/" . font-lock-string-face)
+      ("=" . font-lock-keyword-face)
+      ("@\\+?:" . font-lock-keyword-face)
+      ("\\$" . font-lock-keyword-face)
+      ("\\?.*\\?" . font-lock-negation-char-face)
+      ("\\[\\|\\]\\|{\\|}\\|(\\|)\\||\\|,\\|;" . font-lock-type-face))
+    '("\\.ebnf\\'")
+    `(,(lambda () (setq mode-name "EBNF")))
+    "Major mode for EBNF metasyntax text highlighting."))
 
 (defun dotspacemacs/user-config/eivindf-sintef ()
   (defproject IFEM-PoroElasticity
