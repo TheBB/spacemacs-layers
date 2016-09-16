@@ -5,8 +5,8 @@
     (font-lock-comment-face :slant italic)
     (font-lock-string-face :slant italic)
     (font-lock-doc-face :slant italic)
-    (font-lock-keyword-face :weight bold)
-    (font-lock-builtin-face :foreground "#ff9eb8" :weight semi-bold)
+    (font-lock-keyword-face :weight bold :foreground "#ff4185")
+    (font-lock-builtin-face :foreground "#ffabd6" :weight semi-bold)
     (font-lock-warning-face :underline nil)
     (web-mode-html-attr-value-face
      :inherit font-lock-string-face :foreground nil)
