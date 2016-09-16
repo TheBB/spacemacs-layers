@@ -215,11 +215,6 @@
    '((newline-mark 10 [172 10])
      (tab-mark 9 [9655 9]))
 
-   ;; Smartparens
-   sp-highlight-pair-overlay nil
-   sp-highlight-wrap-overlay nil
-   sp-highlight-wrap-tag-overlay nil
-
    ;; Magit
    magit-popup-show-common-commands nil
    magit-gh-pulls-pull-detail-limit 200
