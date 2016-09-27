@@ -28,6 +28,7 @@
      clojure
      command-log
      csharp
+     csv
      dash
      django
      elfeed
