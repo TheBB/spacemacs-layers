@@ -52,6 +52,7 @@
      lua
      markdown
      org
+     pdf-tools
      php
      (python :variables python-test-runner 'pytest)
      (ranger :variables ranger-override-dired t)
@@ -186,6 +187,7 @@
    paradox-github-token t
    open-junk-file-find-file-function 'find-file
    read-quoted-char-radix 16
+   custom-file (concat dotspacemacs-directory "custom.el")
 
    ;; Theming
    monokai-highlight-line "#3A3A3A"
