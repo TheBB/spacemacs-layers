@@ -360,6 +360,16 @@
     (push `(alpha . ,tp) default-frame-alist)
     (set-frame-parameter (selected-frame) 'alpha tp))
 
+  ;; Force echo in `quoted-insert'
+  (defun read-quoted-char-always-echo (orig-fn &optional prompt)
+    (funcall orig-fn (or prompt "Character code: ")))
+  (defun quoted-insert-always-echo (orig-fn arg)
+    (prog2
+        (advice-add 'read-quoted-char :around 'read-quoted-char-always-echo)
+        (funcall orig-fn arg)
+      (advice-remove 'read-quoted-char 'read-quoted-char-always-echo)))
+  (advice-add 'quoted-insert :around 'quoted-insert-always-echo)
+
   ;; Safe local variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
 
