@@ -373,7 +373,7 @@
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
 
   ;; Additional packages
-  (add-hook 'cuda-mode-hook (lambda () (run-hooks 'prog-mode-hook)))
+  (add-hook 'cuda-mode-hook 'spacemacs/run-prog-mode-hooks)
   (use-package helm-flycheck
     :defer t
     :init
