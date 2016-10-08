@@ -355,10 +355,9 @@
     (evilified-state-evilify-map proced-mode-map
       :mode proced-mode))
 
-  ;; Experimenting with transparency
-  (let ((tp (cons dotspacemacs-active-transparency dotspacemacs-inactive-transparency)))
-    (push `(alpha . ,tp) default-frame-alist)
-    (set-frame-parameter (selected-frame) 'alpha tp))
+  ;; ;; Experimenting with transparency
+  (spacemacs/toggle-transparency)
+  (add-hook 'after-make-frame-functions 'spacemacs/toggle-transparency)
 
   ;; Force echo in `quoted-insert'
   (defun read-quoted-char-always-echo (orig-fn &optional prompt)
