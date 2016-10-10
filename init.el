@@ -140,6 +140,7 @@
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
    dotspacemacs-distinguish-gui-tab t
    dotspacemacs-emacs-command-key "SPC"
+   dotspacemacs-ex-command-key ":"
    dotspacemacs-remap-Y-to-y$ t
    dotspacemacs-retain-visual-state-on-shift t
    dotspacemacs-visual-line-move-text t
