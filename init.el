@@ -106,6 +106,7 @@
      elfeed-org
      ido
      julia-mode
+     tern
      vi-tilde-fringe)
 
    dotspacemacs-frozen-packages '()))
