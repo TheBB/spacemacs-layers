@@ -278,6 +278,11 @@
      ("irc.gitter.im" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel")
      ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs" "#evil-mode"))))
 
+(defun dotspacemacs/user-init/eivindf-sintef ()
+  (setq-default
+   org-ref-default-bibliography '("~/work/references/references.bib")
+   org-ref-pdf-directory "~/work/references"))
+
 (defun dotspacemacs/user-config ()
 
   ;; Settings
