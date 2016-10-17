@@ -433,7 +433,8 @@
   (defproject IFEM-PoroElasticity
     :path "~/work/IFEM/Apps/PoroElasticity"
     :nil
-    ((helm-make-build-dir . "bld-sd"))))
+    ((helm-make-build-dir . "bld-sd")))
+  (push "~/work" magit-repository-directories))
 
 (defun bb/remove-in-place (var pred)
   (set var (remove-if pred (symbol-value var))))
