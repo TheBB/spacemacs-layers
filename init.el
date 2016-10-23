@@ -60,7 +60,7 @@
      ruby
      rust
      search-engine
-     semantic
+     (semantic :disabled-for emacs-lisp)
      (shell :variables shell-default-shell 'eshell)
      shell-scripts
      (spell-checking :variables spell-checking-enable-by-default nil)
