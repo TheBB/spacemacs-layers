@@ -157,6 +157,8 @@
    dotspacemacs-helm-use-fuzzy 'always
    dotspacemacs-enable-paste-transient-state t
    dotspacemacs-which-key-delay 1.0
+   dotspacemacs-which-key-position 'bottom
+   dotspacemacs-switch-to-buffer-prefers-purpose nil
    dotspacemacs-loading-progress-bar t
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
