@@ -129,7 +129,7 @@
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes
-   '(monokai material spacemacs-dark spacemacs-light solarized-dark leuven zenburn)
+   '(base16-material monokai material spacemacs-dark spacemacs-light solarized-dark leuven zenburn)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font
    `("Source Code Pro"
@@ -278,7 +278,10 @@
    erc-autojoin-channels-alist
    '(("1\\.0\\.0" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel") ; Gitter
      ("irc.gitter.im" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel")
-     ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs" "#evil-mode"))))
+     ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs" "#evil-mode")))
+
+  (push "~/.spacemacs.d/test-theme" custom-theme-load-path)
+  (push "~/.spacemacs.d/test-theme" load-path))
 
 (defun dotspacemacs/user-init/eivindf-sintef ()
   (setq-default
