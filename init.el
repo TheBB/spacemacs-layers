@@ -51,7 +51,7 @@
      latex
      lua
      markdown
-     org
+     (org :disabled-for ess)
      pdf-tools
      php
      (python :variables python-test-runner 'pytest)
