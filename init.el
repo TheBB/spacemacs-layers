@@ -93,6 +93,7 @@
    '(cuda-mode
      defproject
      editorconfig
+     evil-embrace
      helm-flycheck
      kivy-mode
      nameless
@@ -414,6 +415,9 @@
     (push '(kivy-mode . kivy-indent-offset) spacemacs--indent-variable-alist))
   (use-package defproject
     :commands defproject)
+  (use-package evil-embrace
+    :config
+    (evil-embrace-enable-evil-surround-integration))
 
   ;; EBNF grammar
   (define-generic-mode 'ebnf-mode
