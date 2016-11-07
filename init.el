@@ -407,7 +407,10 @@
     :config
     (push '(undo discard-info) warning-suppress-types))
   (use-package editorconfig
-    :config (editorconfig-mode 1))
+    :config
+    (progn
+      (spacemacs|diminish editorconfig-mode)
+      (editorconfig-mode 1)))
   (use-package kivy-mode
     :defer t
     :init
