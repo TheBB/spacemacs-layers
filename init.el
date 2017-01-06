@@ -442,7 +442,8 @@
     :path "~/work/IFEM/Apps/PoroElasticity"
     :nil
     ((helm-make-build-dir . "bld-sd")))
-  (push "~/work" magit-repository-directories))
+  (with-eval-after-load 'magit-repos
+    (push "~/work" magit-repository-directories)))
 
 (defun bb/remove-in-place (var pred)
   (set var (remove-if pred (symbol-value var))))
@@ -469,3 +470,10 @@
 
 (when (file-exists-p "~/local.el")
   (load "~/local.el"))
+
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+)
