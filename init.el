@@ -126,7 +126,7 @@
    dotspacemacs-editing-style 'vim
    dotspacemacs-startup-banner nil
    dotspacemacs-startup-lists '(bookmarks (recents . 10) projects)
-   dotspacemacs-startup-buffer-responsive t
+   dotspacemacs-startup-buffer-responsive nil
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes
    '(monokai material spacemacs-dark spacemacs-light solarized-dark leuven zenburn)
