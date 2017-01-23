@@ -62,6 +62,7 @@
      (semantic :disabled-for emacs-lisp)
      (shell :variables shell-default-shell 'eshell)
      shell-scripts
+     slack
      (spell-checking :variables spell-checking-enable-by-default nil)
      spotify
      (syntax-checking :variables syntax-checking-enable-by-default nil)
@@ -85,6 +86,7 @@
      bb-keys
      bb-latex
      bb-org
+     bb-slack
      bb-theming
      bb-web)
 
