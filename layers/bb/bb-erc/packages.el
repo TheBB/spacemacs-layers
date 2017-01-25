@@ -21,7 +21,8 @@
      "\\[Github\\].* synchronize a Pull Request"
      "\\[Github\\].* labeled an issue in"
      "\\[Github\\].* labeled a Pull Request"
-     "\\[Github\\].* unlabeled an issue in"))
+     "\\[Github\\].* unlabeled an issue in"
+     "\\[Github\\].* commented in"))
 
   (add-hook 'erc-mode-hook
             (lambda () (setq-local global-hl-line-mode nil)))
@@ -34,7 +35,6 @@
     (setq erc-insert-modify-hook
           '(erc-controls-highlight
             erc-button-add-buttons
-            bb/erc-github-filter
             erc-fill
             erc-match-message
             erc-add-timestamp
