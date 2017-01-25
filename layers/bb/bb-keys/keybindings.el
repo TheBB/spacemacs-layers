@@ -1,4 +1,4 @@
 (spacemacs/set-leader-keys
-  "aC" 'calculator
+  "a C-c" 'calculator
   "qw" 'bb/maybe-quit
   "qf" 'bb/save-delete-quit)
