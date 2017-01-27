@@ -20,10 +20,13 @@
      "\\[Github\\].* forked"
      "\\[Github\\].* synchronize a Pull Request"
      "\\[Github\\].* labeled an issue in"
+     "\\[Github\\].* unlabeled an issue in"
      "\\[Github\\].* opened an issue in"
      "\\[Github\\].* edited an issue in"
      "\\[Github\\].* labeled a Pull Request"
-     "\\[Github\\].* unlabeled an issue in"
+     "\\[Github\\].* unlabeled a Pull Request"
+     "\\[Github\\].* opened a Pull Request to"
+     "\\[Github\\].* closed a Pull Request to"
      "\\[Github\\].* commented in"))
 
   (add-hook 'erc-mode-hook
