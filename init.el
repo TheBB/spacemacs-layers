@@ -445,7 +445,7 @@
     :nil
     ((helm-make-build-dir . "bld-sd")))
   (with-eval-after-load 'magit-repos
-    (push "~/work" magit-repository-directories)))
+    (push '("~/work" . 1) magit-repository-directories)))
 
 (defun bb/remove-in-place (var pred)
   (set var (remove-if pred (symbol-value var))))
