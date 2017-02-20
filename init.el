@@ -276,11 +276,17 @@
    erc-server-list
    `(("irc.gitter.im" :port "6667" :nick "TheBB" :full-name ,bb/full-name
       :ssl t :password ,bb/gitter-pwd)
-     ("irc.freenode.net" :port "6667" :nick "TheBB" :full-name ,bb/full-name))
+     ("irc.freenode.net" :port "6667" :nick "TheBB" :full-name ,bb/full-name
+      ;; :ssl t :password ,(concat "TheBB:" bb/freenode-pwd)
+      )
+     )
    erc-autojoin-channels-alist
    '(("1\\.0\\.0" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel") ; Gitter
      ("irc.gitter.im" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel")
-     ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs" "#evil-mode"))))
+     ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs" "#evil-mode"))
+   ;; erc-nickserv-passwords
+   ;; `((freenode (("TheBB" . ,bb/freenode-pwd))))
+   ))
 
 (defun dotspacemacs/user-init/eivindf-sintef ()
   (setq-default
