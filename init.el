@@ -299,7 +299,8 @@
   ;; Spaceline
   (setq powerline-default-separator 'arrow
         spaceline-buffer-encoding-abbrev-p nil
-        spaceline-version-control-p nil)
+        spaceline-version-control-p nil
+        spaceline-erc-track-p nil)
 
   ;; Filenames
   (dolist (e '(("xml" . web-mode)

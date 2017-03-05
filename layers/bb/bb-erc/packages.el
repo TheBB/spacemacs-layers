@@ -1,6 +1,8 @@
 (setq bb-erc-packages
       '(emoji-cheat-sheet-plus
         erc
+        (erc-image :excluded t)
+        (erc-yt :excluded t)
         persp-mode
         typo))
 
@@ -46,8 +48,7 @@
             erc-add-timestamp
             erc-hl-nicks))
     (dolist (module '(track youtube image))
-      (setq erc-modules (remove module erc-modules)))
-    (erc-track-mode -1)))
+      (setq erc-modules (remove module erc-modules)))))
 
 (defun bb-erc/post-init-emoji-cheat-sheet-plus ()
   (add-hook 'erc-mode-hook 'emoji-cheat-sheet-plus-display-mode))
