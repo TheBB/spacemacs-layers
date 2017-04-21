@@ -325,6 +325,7 @@
             (defun bb/delayed-redraw (frame)
               (run-with-timer 0.2 nil 'redraw-frame frame)))
   (remove-hook 'prog-mode-hook 'spacemacs//show-trailing-whitespace)
+  (define-coding-system-alias 'utf8 'utf-8)
 
   ;; Evil MC
   (add-hook 'prog-mode-hook 'turn-on-evil-mc-mode)
