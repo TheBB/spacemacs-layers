@@ -92,6 +92,7 @@
 
    dotspacemacs-additional-packages
    '(cuda-mode
+     cython-mode
      defproject
      editorconfig
      evil-embrace
@@ -425,6 +426,8 @@
   (use-package evil-embrace
     :config
     (evil-embrace-enable-evil-surround-integration))
+  (use-package cython-mode
+    :defer t)
 
   ;; EBNF grammar
   (define-generic-mode 'ebnf-mode
