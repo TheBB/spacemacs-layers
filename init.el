@@ -276,13 +276,9 @@
    ;; IRC
    erc-server-list
    `(("efonn.no" :port 1025 :nick "TheBB" :password ,(format "TheBB/freenode:%s" bb/znc-pwd)))
-   ;; `(("irc.gitter.im" :port "6667" :nick "TheBB" :full-name ,bb/full-name
-   ;;    :ssl t :password ,bb/gitter-pwd)
-   ;; erc-autojoin-channels-alist
-   ;; '(("1\\.0\\.0" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel") ; Gitter
-   ;;   ("irc.gitter.im" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel")
-   ;;   ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs" "#evil-mode"))
-   ))
+   erc-ignore-list
+   '("Orestotlra" "Anwellyin" "GWILIESEN" "Howdeshell" "Otsuka" "MALIK" "xXgulbragurXx13" "Clytaemnus"
+     "Glass" "GEIRSKLA" "AlsTEinnhr" "Lenunnono011" "MaRzLa" "Bohnert")))
 
 (defun dotspacemacs/user-init/eivindf-sintef ()
   (setq-default
