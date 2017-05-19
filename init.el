@@ -94,7 +94,6 @@
    '(cuda-mode
      cython-mode
      defproject
-     editorconfig
      evil-embrace
      helm-flycheck
      kivy-mode
@@ -409,11 +408,6 @@
     :defer t
     :config
     (push '(undo discard-info) warning-suppress-types))
-  (use-package editorconfig
-    :config
-    (progn
-      (spacemacs|diminish editorconfig-mode)
-      (editorconfig-mode 1)))
   (use-package kivy-mode
     :defer t
     :init
