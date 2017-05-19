@@ -108,6 +108,7 @@
      elfeed-org
      ido
      julia-mode
+     magithub
      tern
      vi-tilde-fringe)
 
