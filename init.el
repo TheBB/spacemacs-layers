@@ -109,6 +109,7 @@
      ido
      julia-mode
      magithub
+     ob
      tern
      vi-tilde-fringe)
 
