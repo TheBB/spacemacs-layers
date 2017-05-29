@@ -91,7 +91,8 @@
      bb-web)
 
    dotspacemacs-additional-packages
-   '(cuda-mode
+   '(bison-mode
+     cuda-mode
      cython-mode
      defproject
      evil-embrace
@@ -305,7 +306,9 @@
                ("xinp" . web-mode)
                ("C" . c++-mode)
                ("h" . c++-mode)
-               ("dconf" . conf-mode)))
+               ("dconf" . conf-mode)
+               ("yy" . bison-mode)
+               ("ll" . flex-mode)))
     (push (cons (concat "\\." (car e) "\\'") (cdr e)) auto-mode-alist))
   (dolist (e '(("PKGBUILD" . shell-script-mode)
                ("conky.conf" . lua-mode)))
@@ -436,7 +439,29 @@
       ("\\[\\|\\]\\|{\\|}\\|(\\|)\\||\\|,\\|;" . font-lock-type-face))
     '("\\.ebnf\\'")
     `(,(lambda () (setq mode-name "EBNF")))
-    "Major mode for EBNF metasyntax text highlighting."))
+    "Major mode for EBNF metasyntax text highlighting.")
+
+  (define-derived-mode flex-mode c-mode "Flex"
+    "Major mode for editing flex files"
+
+    ;; try to set the indentation correctly
+    (set (make-variable-buffer-local 'c-basic-offset) 4)
+
+    (c-set-offset 'knr-argdecl-intro 0)
+    (make-variable-buffer-local 'c-offsets-alist)
+
+    ;; remove auto and hungry anything
+    (c-toggle-auto-hungry-state -1)
+    (c-toggle-auto-state -1)
+    (c-toggle-hungry-state -1)
+
+    ;; get rid of that damn electric-brace which is not useful with flex
+    (use-local-map flex-mode-map)
+    (define-key flex-mode-map "{" 'self-insert-command)
+    (define-key flex-mode-map "}" 'self-insert-command)
+    (define-key flex-mode-map [tab] 'flex-indent-command)
+    (setq comment-start "/*" comment-end "*/"))
+  (defalias 'flex-indent-command 'c-indent-command))
 
 (defun dotspacemacs/user-config/eivindf-sintef ()
   (defproject IFEM-PoroElasticity
