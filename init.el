@@ -154,6 +154,7 @@
    dotspacemacs-default-layout-name "Home"
    dotspacemacs-display-default-layout nil
    dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-generate-layout-names t
    dotspacemacs-auto-save-file-location 'cache
    dotspacemacs-max-rollback-slots 10
    dotspacemacs-helm-resize t
