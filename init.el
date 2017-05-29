@@ -51,6 +51,7 @@
      lua
      markdown
      (org :disabled-for ess)
+     parinfer
      pdf-tools
      php
      (python :variables python-test-runner 'pytest)
@@ -67,6 +68,7 @@
      spotify
      (syntax-checking :variables syntax-checking-enable-by-default nil)
      systemd
+     (sql :variables sql-capitalize-keywords t)
      typography
      (version-control :variables version-control-diff-tool 'diff-hl)
      vimscript
@@ -502,5 +504,4 @@
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-)
+This function is called at the very end of Spacemacs initialization.")
