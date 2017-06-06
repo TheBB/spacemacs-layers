@@ -392,6 +392,11 @@
   ;; Safe local variables
   (put 'helm-make-build-dir 'safe-local-variable 'stringp)
 
+  ;; Workarounds
+  (setq-default
+   python-shell--interpreter nil
+   python-shell--interpreter-args nil)
+
   ;; Additional packages
   (add-hook 'cuda-mode-hook 'spacemacs/run-prog-mode-hooks)
   (use-package helm-flycheck
