@@ -95,7 +95,6 @@
    dotspacemacs-additional-packages
    '(bison-mode
      cuda-mode
-     cython-mode
      defproject
      evil-embrace
      helm-flycheck
@@ -430,8 +429,6 @@
   (use-package evil-embrace
     :config
     (evil-embrace-enable-evil-surround-integration))
-  (use-package cython-mode
-    :defer t)
 
   ;; EBNF grammar
   (define-generic-mode 'ebnf-mode
