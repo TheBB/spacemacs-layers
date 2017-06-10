@@ -53,6 +53,7 @@
      (org :disabled-for ess)
      parinfer
      pdf-tools
+     perl5
      php
      (python :variables python-test-runner 'pytest)
      (ranger :variables ranger-override-dired t)
@@ -60,6 +61,7 @@
      ruby
      rust
      search-engine
+     scheme
      (semantic :disabled-for emacs-lisp)
      (shell :variables shell-default-shell 'eshell)
      shell-scripts
