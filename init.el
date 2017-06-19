@@ -37,7 +37,6 @@
      erc
      ess
      (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
-     extra-langs
      fasd
      games
      git
@@ -49,6 +48,7 @@
      javascript
      latex
      lua
+     major-modes
      markdown
      (org :disabled-for ess)
      parinfer
@@ -314,8 +314,7 @@
                ("yy" . bison-mode)
                ("ll" . flex-mode)))
     (push (cons (concat "\\." (car e) "\\'") (cdr e)) auto-mode-alist))
-  (dolist (e '(("PKGBUILD" . shell-script-mode)
-               ("conky.conf" . lua-mode)))
+  (dolist (e '(("conky.conf" . lua-mode)))
     (push e auto-mode-alist))
   (with-eval-after-load 'projectile
     (push '("C" "h") projectile-other-file-alist))
