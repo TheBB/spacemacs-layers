@@ -1,5 +1,6 @@
 (setq bb-keys-packages
-      '(avy
+      '(ace-link
+        avy
         company
         evil
         evil-unimpaired
@@ -7,6 +8,9 @@
         hippie-exp
         magit
         (text-mode :location built-in)))
+
+(defun bb-keys/post-init-ace-link ()
+  (spacemacs/set-leader-keys "oo" 'ace-link))
 
 (defun bb-keys/post-init-avy ()
   (with-eval-after-load 'evil-integration
