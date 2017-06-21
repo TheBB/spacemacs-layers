@@ -4,10 +4,12 @@
         company
         evil
         evil-unimpaired
+        eyebrowse
         helm
         hippie-exp
         magit
         (text-mode :location built-in)))
+
 
 (defun bb-keys/post-init-ace-link ()
   (spacemacs/set-leader-keys "oo" 'ace-link))
@@ -46,6 +48,10 @@
   (bb/define-key evil-normal-state-map
     "[s" 'bb/spaces-before
     "]s" 'bb/spaces-after))
+
+(defun bb-keys/post-init-eyebrowse ()
+  (bb/define-key evil-normal-state-map
+    (kbd "C-w") 'spacemacs/workspaces-transient-state/body))
 
 (defun bb-keys/post-init-helm ()
   (spacemacs/set-leader-keys
