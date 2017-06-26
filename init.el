@@ -339,7 +339,9 @@
   ;; Semantic
   (with-eval-after-load 'semantic
     (setq semantic-default-submodes
-          (remove 'global-semantic-stickyfunc-mode semantic-default-submodes)))
+          (remove 'global-semantic-stickyfunc-mode semantic-default-submodes))
+    (setq semantic-default-submodes
+          (remove 'global-semantic-idle-scheduler-mode semantic-default-submodes)))
 
   ;; Diminish
   (spacemacs|diminish holy-mode)
