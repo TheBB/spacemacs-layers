@@ -234,6 +234,7 @@
    ;; Magit
    magit-popup-show-common-commands nil
    magit-gh-pulls-pull-detail-limit 200
+   magit-bury-buffer-function 'magit-mode-quit-window
 
    ;; Flycheck
    flycheck-check-syntax-automatically '(save mode-enabled)
